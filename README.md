@@ -1,24 +1,62 @@
-# README
+# メルカリ　クローン DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
+|address|string|null: false|
+|profile|string|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :products
+- has_many :comments
 
-Things you may want to cover:
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_name|text|null: false|
+|text|text|null: false|
+|category|string|null :false|
+|product_photo_id|string｜null :false｜
+|brand_name|string|
+|price|integer|null: false|
+|product_size|string|
+|condition|string|null :false|
+|shipping_charge|string|
+|shipping_method|string|
+|delivery_area|string|null :false|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :posts_tags
+- has_many  :tags,  through:  :posts_tags
 
-* Ruby version
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+### Association
+- belongs_to :user
+- belongs_to :products
+- has_many  :comments,  through:  :posts_tags
 
-* System dependencies
+## product_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+||integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :tag
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
