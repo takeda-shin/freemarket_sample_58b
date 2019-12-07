@@ -7,11 +7,10 @@
 |password|string|null: false|
 |birthday|integer|null: false|
 |address|string|null: false|
-|phone_number|integer|null: false|
+|phone_number|string|unique:true|
 |profile|string|
 |credit_card_id|integer|null: false, foreign_key: true|
-|sell_products|string|
-|buy_products|string|
+|product_id|integer|null :false, foreign_key: true|
 
 ### Association
 - has_many :products
@@ -44,12 +43,9 @@
 |user_id|integer|null: false, foreign_key: true|
 |comment_id|integer|null: false, foreign_key: true|
 
-
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
 
 ## コメントテーブル
 |Column|Type|Options|
