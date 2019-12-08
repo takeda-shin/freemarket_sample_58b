@@ -1,8 +1,17 @@
 .body{
+  &__screen{
+  width: 100%;
+  text-align: center;
+  line-height: 260px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 50px;
+}
   &__contents{
     &__title{
       text-align: center;
-      margin: 130px auto 30px;
+      margin: 30px auto 30px;
       p{
         font-size: 32px;
         font-weight: bold;
@@ -17,9 +26,8 @@
     }
     &__view{
       background-color: #eee;
-      padding: 25px 240px;
+      padding: 25px 240px 80px;
       font-weight: bold;
-      margin: 5px;
       .title{
         margin-left: 10px;
       }
