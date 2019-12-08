@@ -1,0 +1,21 @@
+.exhibit{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #FF0000;
+  font-size: 22px;
+  color: #FFF;
+  text-align: center;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  p{
+    margin-top: 32px;
+  }
+  &__camera{
+    font-size: 54px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    height: 60px;
+  }
+}

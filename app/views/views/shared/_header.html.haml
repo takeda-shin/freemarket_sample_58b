@@ -1,15 +1,14 @@
-.header
-  .header__form
-    = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo"
-    = form_with local: true, class: :search do |f| 
-      = f.text_area :content, placeholder: '何かお探しですか？'
-  .header__tag
-    .header__tag__serch
-      カテゴリーから探す
-      ブランドから探す
-    .header__tag__other
-      お知らせ
-      やることリスト
-      マイページ
-  .header__screen
-    = image_tag src= "https://i.gyazo.com/01ac19704a50a8f1fb2d5fa8351bc1b2.jpg"
+.header__form
+  = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: "logo"
+  = form_with local: true, class: :search do |f| 
+    = f.text_area :content, placeholder: '何かお探しですか？'
+.header__tag
+  .header__tag__serch
+    カテゴリーから探す
+    ブランドから探す
+  .header__tag__other
+    お知らせ
+    やることリスト
+    マイページ
+.header__screen
+  = image_tag src= "https://i.gyazo.com/01ac19704a50a8f1fb2d5fa8351bc1b2.jpg"
