@@ -58,13 +58,12 @@
 |shipping_method|string|
 |delivery_area|string|null :false|
 |user_id|integer|null: false, foreign_key: true|
-|comment_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
+- belongs_to :category
 - has_many :photos, :dependent => :destroy
 - has_many :comments, :dependent => :destroy
-- has_many :category
 
 ## photosテーブル
 |Column|Type|Options|
