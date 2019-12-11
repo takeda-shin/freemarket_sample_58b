@@ -1,5 +1,5 @@
 # メルカリ　クローン DB設計
-## ユーザーテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -10,19 +10,19 @@
 |email|string|null: false|
 |password|string|null: false|
 |birthday|integer|null: false|
-|address_id|string|null: false|
 |phone_number|string|unique:true|
 |profile|string|
-|credit_card_id|integer|null: false|
-|product_id|integer|null :false|
 
 ### Association
 - has_many :products　
 - has_many :comments, :dependent => :destroy
+- has_one :user_address
+- has_one :card_info
 
-## 住所テーブル
+## user_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|reference|null :false|
 |postal_code|integer|null :false|
 |perfectures|string|null :false|
 |city|string|null :false|
@@ -32,10 +32,10 @@
 ### Association
 - belongs_to :user
 
-## クレジットカード情報テーブル
+## card_infoテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false|
+|user_id|reference|null :false|
 |card_number|integer|null: false|
 |use_limit|integer|null: false|
 |security_code|integer|null: false|
@@ -44,13 +44,12 @@
 - belongs_to :user
 
 
-## 商品テーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_name|text|null: false|
+|name|string|null: false|
 |text|text|null: false|
 |category_id|string|null: false, foreign_key: true|
-|product_photo_id|string｜null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |price|integer|null: false|
 |product_size|string|
@@ -63,10 +62,20 @@
 
 ### Association
 - belongs_to :user
+- has_many :photos, :dependent => :destroy
 - has_many :comments, :dependent => :destroy
 - has_many :category
 
-## コメントテーブル
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|reference|null :false, foreign_key: true|
+|name|string|
+
+### Association
+- belongs_to :product
+
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -74,13 +83,12 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :products
+- belongs_to :product
 
-## カテゴリテーブル
+## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_name|string|null: false|
-|category_id|integer|null: false|
+|name|string|null: false|
 |size_id|reference|null :false, foreign_key: true|
 
 ### Association
@@ -88,18 +96,17 @@ has_many :blands
 has_many :products
 has_one :category_size
 
-## カテゴリのサイズテーブル
+## category_sizeテーブル
 |Column|Type|Options|
 |------|----|-------|
 |size_id|integer|null: false|
 |size|string|
 
 
-### ブランド(メーカー)テーブル
+### blandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|bland_name|string|
-|bland_id|integer|null :false|
+|name|string|
 
 ### Association
 - has_many :products
