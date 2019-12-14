@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'users#show' 
 
-  root to: "products#index"
-
   resources :products, only: [:index]
 
 end
