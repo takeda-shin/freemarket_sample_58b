@@ -1,0 +1,39 @@
+.body{
+  background-color: #fff;
+  &__buy{
+    background-color: #fff;
+    width:700px;
+    margin: 0 auto;
+    &__title{
+      font-size:24px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__top{
+      display: flex;
+      &__photo{
+        background-color: #eee;
+        &__view{
+          &__image{
+            height: 180px;
+          }
+        }
+      }
+      &__status{
+        &__box{
+          display: flex;
+          height: 30px;
+          &__key{
+            width: 100px;
+            border: 1px solid gray; 
+            background-color:#eee;
+          }
+          &__value{
+            width: 180px;
+            border: 1px solid #eee; 
+          }
+        }
+      }
+    }
+  }
+}

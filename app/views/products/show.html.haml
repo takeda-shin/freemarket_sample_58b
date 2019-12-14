@@ -1,0 +1,31 @@
+.header
+  = render 'views/shared/header'
+.body
+  .body__buy
+    .body__buy__title
+      ダミーヘッドマイク
+    .body__buy__top
+      = render 'photo'
+      = render 'status'
+    .body__buy__price
+      1,000,000
+    .body__buy__btn
+      購入画面に進む
+    .body__buy__description
+      
+    .body__buy__good
+      いいね！
+  .body__message
+    相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  .body__sns
+    = link_to "https://twitter.com/", class: "footer__message__left__contents__logo" do
+      = icon('fab', 'twitter')
+    = link_to "https://www.facebook.com/", class: "footer__message__left__contents__logo" do
+      = icon('fab', 'facebook-square')
+  .body__other
+    .body__other__person
+      枝尾さんのその他の出品
+    .body__other__category
+      アニメ （本・音楽・ゲーム） その他の商品
+.footer
+  = render 'views/shared/footer'
