@@ -1,0 +1,16 @@
+.body__contents
+  .body__contents__title
+    %p 人気のブランド
+    %a シャネル
+    %a ルイヴィトン
+    %a シュプリーム
+    %a ナイキ
+  .body__contents__view
+    - 4.times do |i|
+      %p.title 新着 スパイスカレー
+      - 5.times do |i|
+        .body__contents__view__product
+          .body__contents__view__product__box
+            = image_tag src = "https://images-na.ssl-images-amazon.com/images/I/51aU1zvWu5L._SX351_BO1,204,203,200_.jpg", class: "body__contents__view__product__box__image"
+            %a.text 印度ｶﾘｰ子さんの本です
+            %a.value ¥1,430
