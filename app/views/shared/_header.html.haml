@@ -2,7 +2,7 @@
   .header-inner
     .header-inner-top
       %h1
-        %a{href: "https://www.mercari.com/jp/"}
+        = link_to "", "https://www.mercari.com/jp/"
         %img{alt: "mercari", height: "36", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3609274330",width: "134"}/
 
       = form_tag('/search', method: :get, class: 'search-form') do
@@ -19,7 +19,7 @@
         %ul.header-left__menu
           %li           
             = fa_icon "tags", class: "header-left__menu--icon"
-            = link_to "", "https://www.mercari.com/jp/category/", class: "header-left__menu--btn"
+            = link_to "", "https://www.mercari.com/jp/category/", class: "header-left__menu--btn" 
             %span ブランドから探す
 
       .header-right
