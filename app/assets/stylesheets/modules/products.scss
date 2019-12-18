@@ -1,0 +1,257 @@
+.body{
+
+  background-color: #eee;
+  padding: 20px 0;
+
+  &__buy{
+    background-color: #fff;
+    width:600px;
+    margin: 10px auto;
+    padding: 10px 10px;
+
+    &__title{
+      font-size:24px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    &__top{
+
+      display: flex;
+
+      &__photo{
+        background-color: #eee;
+
+        &__view{
+
+          &__image{
+            height: 330px;
+          }
+
+        }
+        &__select{
+          display: flex;
+
+          &__mini-image{
+            width: 60px;
+          }
+        }
+      }
+
+      &__status{
+        margin-left: 15px;
+        &__box{
+          display: flex;
+          height: 60px;
+          line-height: 60px;
+          font-size: 12px;
+
+          &__key{
+            width: 100px;
+            border: 0.5px solid #fff; 
+            background-color:#f9f9f9;
+            padding-left: 5px;
+          }
+          &__value{
+            width: 180px;
+            border: 1px solid #eee; 
+            padding-left: 5px;
+          }
+
+          &__value-category{
+            line-height: 18px;
+            color: #09f;
+            padding-left: 5px;
+          }
+
+          &__value-area{
+            color: #09f;
+            padding-left: 5px;
+          }
+
+        }
+
+        &__boxs{
+          display: flex;
+          height: 60px;
+          line-height: 30px;
+          font-size: 12px;
+
+          &__key{
+            width: 100px;
+            border: 0.5px solid #fff; 
+            background-color:#f9f9f9;
+            padding-left: 5px;
+          }
+          &__value{
+            width: 180px;
+            border: 1px solid #eee; 
+            padding-left: 5px;
+
+            .top{
+              color: #09F;
+            }
+
+            &__down{
+              display: flex;
+              
+              &__evalution{
+                display: flex;
+                font-size: 16px;
+                margin-right: 16px;
+
+                .good{
+                  color: #f33;
+                }
+                .normal{
+                  color: #f99;
+                }
+                .bad{
+                  color: #33c;
+                }
+
+                .count{
+                  line-height: 20px;
+                }
+              }
+              
+            }
+          }
+        }
+      }
+    }
+
+    &__price{
+      text-align: center;
+      .value{
+        font-size: 48px;
+      }
+      &__describe{
+        font-size: 16px;
+        display: flex;
+        margin-left: 250px;
+        .tax{
+          font-size: 12px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &__btn{
+      background-color: #f00;
+      height: 64px;
+      width: 600px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 64px;
+    }
+
+    &__description{
+      width: 600px;
+      font-size: 18px;
+      margin-top: 50px;
+    }
+
+    &__comment{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      &__left{
+        display: flex;
+
+        &__text{
+          display: flex;
+          background-color: #eee;
+          border-radius: 10px;
+          margin: 10px;
+          padding: 3px 6px;
+          font-size: 16px;
+
+          .click{
+            margin-left: 5px;
+          }
+        }
+
+      }
+
+      &__right{
+        margin: 13px 10px;
+        font-size: 16px;
+        color: #09f;
+      }
+    }
+  }
+
+  &__message{
+    background-color: #fff;
+    width: 625px;
+    margin: 20px auto;
+    padding: 10px 0 ;
+
+    .alert{
+      width: 600px;
+      background-color: #fe9;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 10px;
+      font-size: 12px;
+    }
+
+    .form{
+      margin: 10px;
+      height: 100px;
+      width: 600px;
+      border: 1px solid #eee;
+
+    }
+
+    .btn{
+      display: block;
+      background-color: #aaa;
+      height: 64px;
+      width: 600px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 64px;
+      margin: 10px;
+    }
+
+  }
+
+  &__sns{
+    background-color: #fff;
+    font-size: 32px;
+    display: flex;
+    height: 150px;
+    width: 625px;
+    margin: auto;
+
+    &__click{
+      margin: auto;
+      font-size: 48px;
+
+      .facebook{
+        margin: 0 1px;
+        color: #00f;
+      }
+      .twitter{
+        margin: 0 1px;
+        color: #33f;
+      }
+      .pinterest{
+        margin: 0 1px;
+        color: #a00;
+      }
+
+    }
+
+    
+  }
+  
+}

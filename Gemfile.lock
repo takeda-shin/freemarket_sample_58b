@@ -290,7 +290,9 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
+
   erb2haml
+
   fog-aws
   font-awesome-rails
   font-awesome-sass
