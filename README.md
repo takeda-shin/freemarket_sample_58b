@@ -1,24 +1,111 @@
-# README
+# メルカリ　クローン DB設計
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|family_name|string|null :false|
+|family_name_kana|string|null :false|
+|first_name|string|null :false|
+|first_name_kana|string|null :false|
+|email|string|null: false|
+|password|string|null: false|
+|birthday|integer|null: false|
+|phone_number|string|unique:true|
+|profile|string|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :products　
+- has_many :comments, :dependent => :destroy
+- has_one :user_address
+- has_one :card_info
 
-Things you may want to cover:
+## user_addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null :false|
+|postal_code|integer|null :false|
+|perfectures|string|null :false|
+|city|string|null :false|
+|address|string|null :false|
+|building|string|null :false|
 
-* Ruby version
+### Association
+- belongs_to :user
 
-* System dependencies
+## card_infoテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null :false|
+|card_number|integer|null: false|
+|use_limit|integer|null: false|
+|security_code|integer|null: false|
 
-* Configuration
+### Association
+- belongs_to :user
 
-* Database creation
 
-* Database initialization
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|text|text|null: false|
+|category_id|string|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|price|integer|null: false|
+|product_size|string|
+|condition|string|null :false|
+|shipping_charge|string|
+|shipping_method|string|
+|delivery_area|string|null :false|
+|user_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :category
+- has_many :photos, :dependent => :destroy
+- has_many :comments, :dependent => :destroy
 
-* Services (job queues, cache servers, search engines, etc.)
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|reference|null :false, foreign_key: true|
+|name|string|
 
-* Deployment instructions
+### Association
+- belongs_to :product
 
-* ...
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|product_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :product
+
+## categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|size_id|reference|null :false, foreign_key: true|
+
+### Association
+has_many :blands
+has_many :products
+has_one :category_size
+
+## category_sizeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size_id|integer|null: false|
+|size|string|
+
+
+### blandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+
+### Association
+- has_many :products
