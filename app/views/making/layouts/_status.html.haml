@@ -1,7 +1,24 @@
 .body__buy__top__status
+  .body__buy__top__status__boxs
+    .body__buy__top__status__boxs__key 出品者
+    .body__buy__top__status__boxs__value
+      %p.top 枝尾
+      .body__buy__top__status__boxs__value__down
+        .body__buy__top__status__boxs__value__down__evalution
+          = fa_icon 'smile-o', class: "good"
+          %p.count 10
+        .body__buy__top__status__boxs__value__down__evalution
+          = fa_icon 'meh-o', class: "normal"
+          %p.count 1000
+        .body__buy__top__status__boxs__value__down__evalution
+          = fa_icon 'frown-o', class: "bad"
+          %p.count 10
   .body__buy__top__status__box
     .body__buy__top__status__box__key カテゴリー
-    .body__buy__top__status__box__value 音楽
+    .body__buy__top__status__box__value-category 
+      %p 家電・スマホ・カメラ
+      %p >オーディオ機器
+      %p >マイク
   .body__buy__top__status__box
     .body__buy__top__status__box__key ブランド
     .body__buy__top__status__box__value
@@ -16,7 +33,7 @@
     .body__buy__top__status__box__value 投げつける
   .body__buy__top__status__box
     .body__buy__top__status__box__key 配送元地域
-    .body__buy__top__status__box__value 福岡
+    .body__buy__top__status__box__value-area 福岡
   .body__buy__top__status__box
     .body__buy__top__status__box__key 発送日の目安
     .body__buy__top__status__box__value 翌日
