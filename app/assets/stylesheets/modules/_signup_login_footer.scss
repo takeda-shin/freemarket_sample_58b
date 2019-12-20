@@ -1,0 +1,32 @@
+.common-footer {
+  bottom: 0;
+  height: 220px;
+  width: 100vw;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F5F5F5;
+  &__box {
+    width: 456px;
+    margin: 0 auto;
+    padding: 40px 0px;
+    &__link {
+      display: inline-block;
+      &__text {
+        text-decoration: none;
+        color: #333333;
+      }
+    }
+    &__logo {
+      margin-top: 26px;
+      &__mark {
+        height: 60px;
+        width: 85px;
+        display: inline-block;
+      }
+      &__company{
+        font-size: 13px;
+      }
+    }
+  }
+}
