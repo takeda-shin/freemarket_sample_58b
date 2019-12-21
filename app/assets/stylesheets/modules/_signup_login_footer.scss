@@ -5,7 +5,7 @@
   font-size: 12px;
   margin: 0 auto;
   text-align: center;
-  background-color: #F5F5F5;
+  background-color: $background-gray;
   &__box {
     width: 456px;
     margin: 0 auto;
@@ -14,7 +14,7 @@
       display: inline-block;
       &__text {
         text-decoration: none;
-        color: #333333;
+        color: $black;
       }
     }
     &__logo {

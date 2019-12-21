@@ -1,8 +1,8 @@
 .login-main {
-  background-color: #F5F5F5;
+  background-color: $background-gray;
   font-size: 14px;
   a {
-    color: #0099E8;
+    color: $link-blue;
     text-decoration: none;
   }
   .login-box {
@@ -11,27 +11,27 @@
     &__no-account {
       padding: 40px 64px;
       text-align: center;
-      background-color: white;
-      border-bottom: solid 1px #f5f5f5;
+      background-color: $white;
+      border-bottom: solid 1px $background-gray;
       &__btn {
         display: block;
-        background-color: #0099E8;
+        background-color: $link-blue;
         height: 42px;
         line-height: 40px;
         width: 328px;
         margin: 8px 0 0;
-        color: white;
+        color:$white;
       }
     }
     &__form {
       padding: 32px 64px;
-      background-color: white;
+      background-color: $white;
       &__input {
         &__field {
           &__box {
             height: 48px;
             width: 328px;
-            background-color: white;
+            background-color: $white;
             padding: 10px 16px 8px;
             margin: 0 0 24px;
             border: 1px solid #ccc;
@@ -42,11 +42,11 @@
         }
         &__submit-btn {
           font-size: 14px;
-          color: white;
+          color: $white;
           height: 50px;
           width: 328px;
           margin: 24px 0 0;
-          background-color: #EA352D;
+          background-color: $submit-red;
         }
       }
       &__recaptcha img{
@@ -57,7 +57,7 @@
         height: 50px;
         width: 328px;
         display: block;
-        color: white;
+        color: $white;
         font-size: 14px;
         text-align: center;
         line-height: 50px; 
@@ -72,16 +72,16 @@
         }
       }
       &__facebook {
-        background-color: #385185;
+        background-color: $facebook;
       }
       &__google {
-        color: #333333;
-        background-color: white;
+        color: $black;
+        background-color: $white;
         border: #979797 solid 1px;
         margin: 16px auto 0;
       }
       &__link {
-        color: #0099E8;
+        color: $link-blue;
         text-decoration: none;
         margin: 40px 0 0;
       }

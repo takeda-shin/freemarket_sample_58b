@@ -1,7 +1,7 @@
 .common-header {
   height: 128px;
   width: 100%;
-  background-color: #F5F5F5;
+  background-color: $background-gray;
   text-align: center;
   .common-header__logo {
     height: 50px;
@@ -13,7 +13,7 @@
 .signup-header{
   height: 128px;
   width: 100%;
-  background-color: #F5F5F5;
+  background-color: $background-gray;
   text-align: center;
   .signup-header__logo {
     display: inline-block;
@@ -37,7 +37,7 @@
         font-size: 12px;
         height: 0;
         display: inline-block;
-        color: #CCCCCC;
+        color: $progress-bar-gray;
         position: relative;
         z-index: 40;
         &__status {
@@ -46,7 +46,7 @@
           width: 12px;
           border-radius: 50%;
           margin: 8px auto 0;
-          background-color: #CCCCCC;
+          background-color: $progress-bar-gray;
           left: 40%;
           z-index: 30;
         }
@@ -59,21 +59,21 @@
           bottom: 5px;
           left: 50%;
           display: flex;
-          background-color: #F5F5F5;
+          background-color: $background-gray;
           z-index: 10;
           &--before {
             position: absolute;
             height: 2px;
             width: 100%;
             right: 100%;
-            background-color: #CCCCCC;
+            background-color: $progress-bar-gray;
           }
           &--after {
             display: inline-block;
             height: 2px;
             width: 100%;
             left: 50%;
-            background-color: #CCCCCC;
+            background-color: $progress-bar-gray;
           }
         }
       }
