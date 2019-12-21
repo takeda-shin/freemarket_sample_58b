@@ -119,8 +119,8 @@
 
 
       %li.left-content__bar__list__item__side 
-        = link_to "", "https://www.mercari.com/jp/mypage/notification/"
-        ログアウト
+        = link_to  new_user_path, class: "left-content__bar__list__item__side__link" do
+          ログアウト
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 
       

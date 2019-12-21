@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "making#index"
+  
 
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
@@ -22,9 +22,8 @@ Rails.application.routes.draw do
 
 
   root to: 'users#show' 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :new]
 
-  resources :products, only: [:index]
 
 
 end
