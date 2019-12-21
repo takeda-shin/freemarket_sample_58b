@@ -1,0 +1,60 @@
+.body{
+  background-color: #fff;
+  width: 700px;
+  margin: 0 auto;
+
+  &__title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__product{
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+
+    &__left{
+
+      &__image{
+        height: 100px;
+      }
+    }
+
+    &__right{
+      height: 50px;
+    }
+
+  }
+
+  &__value{
+
+    &__top{
+      display: flex;
+
+    }
+  }
+
+  &__card{
+      display: flex;
+
+  }
+
+  &__address{
+    display: flex;
+
+  }
+
+  &__btn{
+    background-color: #e00;
+    height: 48px;
+    width: 350px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+    margin: 0 auto;
+  }
+
+}
