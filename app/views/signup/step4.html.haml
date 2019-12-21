@@ -1,47 +1,49 @@
-= render partial: "signup-header"
+.signup-login-wrapper
 
-.signup-main
-  .signup-box
-    .signup-box__title
-      %h2 支払い方法
-    .signup-box__form
-      .signup-box__form__content
-        = form_for (""), html: { class: "field-wrapper" } do |f|
-          .field
-            .field__label
-              = f.label :カード番号, class: 'field__label__title'
-              %span.field__label__require 必須
-            .field__input
-              = f.text_field :card_number, class: 'field__input__default',placeholder: "半角数字のみ"
-            .field__list
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1215422380", class: 'field__list__card'
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1215422380", class: 'field__list__card'
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1215422380", class: 'field__list__card'
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1215422380", class: 'field__list__card'
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1215422380", class: 'field__list__card'
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1215422380", class: 'field__list__card'
-              = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1215422380", class: 'field__list__card'
-          .field
-            .field__label
-              = f.label :有効期限, class: 'field__label__title'
-              %span.field__label__require 必須
-            .field__input
-              = f.select :expiration_month, [["--", "--"],[1, 1],[2, 2]], {}, class: 'field__input__select'
-              %span 月
-              = f.select :expiration_year, [["--", "--"],[1, 1],[2, 2]], {}, class: 'field__input__select'
-              %span 年
-          .field
-            .field__label
-              = f.label :セキュリティナンバー, class: 'field__label__title'
-              %span.field__label__require 必須
-            .field__input
-              = f.text_field :sequrity_number, class: 'field__input__default',placeholder: "カード背面4桁もしくは3桁"
-            .field__seqcode
-              .field__seqcode__text
-                %span ?
-                カード裏面の番号とは
+  = render partial: "signup-header"
+
+  .signup-main
+    .signup-box
+      .signup-box__title
+        %h2 支払い方法
+      .signup-box__form
+        .signup-box__form__content
+          = form_for (""), html: { class: "field-wrapper" } do |f|
+            .field
+              .field__label
+                = f.label :カード番号, class: 'field__label__title'
+                %span.field__label__require 必須
+              .field__input
+                = f.text_field :card_number, class: 'field__input__default',placeholder: "半角数字のみ"
+              .field__list
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1215422380", class: 'field__list__card'
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1215422380", class: 'field__list__card'
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1215422380", class: 'field__list__card'
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1215422380", class: 'field__list__card'
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1215422380", class: 'field__list__card'
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1215422380", class: 'field__list__card'
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1215422380", class: 'field__list__card'
+            .field
+              .field__label
+                = f.label :有効期限, class: 'field__label__title'
+                %span.field__label__require 必須
+              .field__input
+                = f.select :expiration_month, [["--", "--"],[1, 1],[2, 2]], {}, class: 'field__input__select'
+                %span 月
+                = f.select :expiration_year, [["--", "--"],[1, 1],[2, 2]], {}, class: 'field__input__select'
+                %span 年
+            .field
+              .field__label
+                = f.label :セキュリティナンバー, class: 'field__label__title'
+                %span.field__label__require 必須
+              .field__input
+                = f.text_field :sequrity_number, class: 'field__input__default',placeholder: "カード背面4桁もしくは3桁"
+              .field__seqcode
+                .field__seqcode__text
+                  %span ?
+                  カード裏面の番号とは
 
 
-            = f.submit "次へ進む", class: "submit-btn"
+              = f.submit "次へ進む", class: "submit-btn"
 
-= render partial: "common-footer" 
+  = render partial: "common-footer" 

@@ -1,18 +1,20 @@
-= render partial: "common-header"
+.signup-login-wrapper
 
-.signup-main
-  .signup-box
-    .signup-box__title
-      %h2 新規会員登録
-    .signup-box__form
-      = link_to "#", class: "signup-box__form__btn signup-box__form__mail" do
-        = icon('far', 'envelope', class: "signup-box__form__btn__icon")
-        メールアドレスで登録する
-      = link_to "#", class: "signup-box__form__btn signup-box__form__facebook" do
-        = icon('fab', 'facebook', class: "signup-box__form__btn__icon")
-        Facebookで登録する
-      = link_to "#", class: "signup-box__form__btn signup-box__form__google" do
-        = icon('fab', 'google', class: "signup-box__form__btn__icon")
-        googleで登録する
+  = render partial: "common-header"
 
-= render partial: "common-footer"
+  .signup-main
+    .signup-box
+      .signup-box__title
+        %h2 新規会員登録
+      .signup-box__form
+        = link_to "#", class: "signup-box__form__btn signup-box__form__mail" do
+          = icon('far', 'envelope', class: "signup-box__form__btn__icon")
+          メールアドレスで登録する
+        = link_to "#", class: "signup-box__form__btn signup-box__form__facebook" do
+          = icon('fab', 'facebook', class: "signup-box__form__btn__icon")
+          Facebookで登録する
+        = link_to "#", class: "signup-box__form__btn signup-box__form__google" do
+          = icon('fab', 'google', class: "signup-box__form__btn__icon")
+          googleで登録する
+
+  = render partial: "common-footer"
