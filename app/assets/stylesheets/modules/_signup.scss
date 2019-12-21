@@ -1,0 +1,260 @@
+.signup-main {
+  background-color: $background-gray;
+  a {
+    color: $link-blue;
+    text-decoration: none;
+  }
+  .signup-box {
+    width: 700px;
+    margin: 0 auto;
+    &__title {
+      height: 100px;
+      width: 700px;
+      padding: 32px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: $white;
+      h2 {
+        font-size: 22px;
+        font-weight: bold;
+        background-color: $white;
+      }
+    }
+    &__form {
+      width: 700px;
+      padding: 24px 16px 40px;
+      background-color: $white;
+      border-top: solid 1px $background-gray;
+      &__btn {
+        text-decoration: none;
+        height: 50px;
+        width: 343px;
+        display: block;
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        line-height: 50px; 
+        position: relative;
+        margin: 0 auto;
+        &__icon {
+          position: absolute;
+          font-size: 20px;
+          display: inline-block;
+          line-height: 50px;
+          left: 20px;
+        }
+      }
+      &__mail {
+        background-color: $mail;
+        color: $black;
+        margin: 0 auto;
+      }
+      &__facebook {
+        background-color: $facebook;
+        margin: 16px auto 0;
+      }
+      &__google {
+        color: $black;
+        background-color: $white;
+        border: #979797 solid 1px;
+        margin: 16px auto 0;
+      }
+      &__content {
+        margin: 0 162.5px;
+        background-color: $white;
+      }
+      &__start {
+        color: $white;
+        background-color: $submit-red;
+      }
+    }
+  }
+}
+
+.field-wrapper {
+  background-color: $white;
+  .field{
+    background-color: $white;
+    padding: 24px 0 0 0;
+    width: 343px;
+    display: block;
+    overflow: hidden;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &__label {
+      background-color: $white;
+      &__title {
+        background-color: $white;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      &__require {
+        font-size: 12px;
+        color: $white;
+        background-color: $submit-red;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+      }
+      &__any {
+        font-size: 12px;
+        color: $white;
+        background-color: $progress-bar-gray;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+      }
+    }
+    &__input {
+      &__default {
+        height: 48px;
+        width: 343px;
+        background-color: $white;
+        padding: 10px 16px 8px;
+        margin: 8px 0 0;
+        border: 1px solid $progress-bar-gray;
+        border-radius: 4px;
+        line-height: 1.5;
+        font-size: 14px;
+      }
+      &__error {
+        font-size: 14px;
+        color: $submit-red;
+        padding: 8px 0 0 0;
+        list-style: none;
+        background-color: $white;
+      }
+      &__info {
+        color: #888888;
+        font-size: 14px;
+        padding: 8px 0 0 0;
+        background-color: $white;
+      }
+      &__half {
+        display: inline-block;
+        height: 48px;
+        width: calc(50% - 8px);
+        background-color: $white;
+        margin: 8px 0 0;
+        padding: 10px 16px 8px;
+        border: 1px solid $progress-bar-gray;
+        border-radius: 4px;
+        line-height: 1.5;
+        font-size: 14px;
+        &:first-of-type {
+          margin-right: 8px;
+        }
+      }
+      &__select {
+        height: 48px;
+        width: 76px;
+        padding: 0 10px;
+        cursor: pointer;
+        background-color: $white;
+        touch-action: manipulation;
+      }
+      span {
+        margin: 0px 2px;
+        font-size: 14px;
+      }
+    }
+    &__checkbox {
+      background-color: $white;
+      font-size: 14px;
+      height: 22px;
+      margin: 16px 0 0;
+      line-height: 1;
+      &__box{
+        height: 20px;
+        width: 20px;
+        margin: 2px 0 0;
+        background-color: $white;
+      }
+      &__label {
+        font-size: 14px;
+        background-color: $white;
+      }
+    }
+    &__confirm {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: $white;
+    }
+    &__confirm-text {
+      font-size: 14px;
+      background-color: $white;
+      padding: 8px 0 0;
+    }
+    &__info{
+      font-size: 14px;
+      text-align: center;
+      background-color: $white;
+    }
+    &__temp-text {
+      padding: 8px 16px;
+      margin: 24px 0 0;
+      background-color: $background-gray;
+      p {
+        font-size: 12px;
+        color: #888888;
+      }
+    }
+    &__right {
+      margin: 24px 0 0;
+      float: right;
+      display: block;
+      font-size: 14px;
+    }
+    h3 {
+      font-weight: bold;
+    }
+    &__list {
+      height: 20px;
+      width: 343px;
+      margin: 8px 0 0;
+      &__card {
+        height: 20px;
+      }
+    }
+    &__seqcode {
+      margin: 8px 0 0;
+      display: block;
+      &__text {
+        color: $link-blue;
+        font-size: 14px;
+        text-align: right;
+        span {
+          display: inline-block;
+          height: 14px;
+          width: 14px;
+          border-radius: 50%;
+          background-color: $link-blue;
+          color: $white;
+          line-height: 14px;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.submit-btn {
+  font-size: 14px;
+  color: $white;
+  height: 50px;
+  width: 343px;
+  margin: 24px 0 0;
+  background-color: $submit-red;
+}
+
+.guide-link {
+  display: block;
+  font-size: 14px;
+  float: right;
+  margin: 24px 0 0;
+}
+
+p {
+  font-size: 14px;
+  margin: 8px 0 0;
+}

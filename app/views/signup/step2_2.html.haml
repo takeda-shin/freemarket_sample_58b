@@ -1,0 +1,39 @@
+= render partial: "signup-header"
+
+.signup-main
+  .signup-box
+    .signup-box__title
+      %h2 電話番号の確認
+    .signup-box__form
+      .signup-box__form__content
+        = form_for (""), html: { class: "field-wrapper" } do |f|
+          .field
+            .field__label
+              = f.label :認証番号, class: 'field__label__title'
+            .field__input
+              = f.text_field :certification_number, class: 'field__input__default',placeholder: "認証番号の入力"
+              %li.field__input__error 認証番号を入力してください
+              %p SMSで届いた認証番号を入力してください
+            = f.submit "認証して完了", class: "submit-btn"
+    .signup-box__form
+      .signup-box__form__content
+        = form_for (""), html: { class: "field-wrapper" } do |f|
+          .field
+            %h3 30秒たっても認証番号が届かない方へ
+            %p 電話で認証番号を聞くこともできます。
+            = f.submit "電話で認証番号を聞く（通話無料）", class: "submit-btn"
+    .signup-box__form
+      .signup-box__form__content
+        .field-wrapper
+          .field
+            %h3 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+            %p
+              = link_to "#" do
+                電話番号を再度入力する
+            %p 
+              ※SMSが届かない場合は
+              = link_to "#" do
+                SMS受信設定
+              を確認して、もう一度電話番号を入力してください。
+
+= render partial: "common-footer" 
