@@ -1,0 +1,90 @@
+.login-main {
+  background-color: $background-gray;
+  font-size: 14px;
+  a {
+    color: $link-blue;
+    text-decoration: none;
+  }
+  .login-box {
+    width: 456px;
+    margin: 0 auto;
+    &__no-account {
+      padding: 40px 64px;
+      text-align: center;
+      background-color: $white;
+      border-bottom: solid 1px $background-gray;
+      &__btn {
+        display: block;
+        background-color: $link-blue;
+        height: 42px;
+        line-height: 40px;
+        width: 328px;
+        margin: 8px 0 0;
+        color:$white;
+      }
+    }
+    &__form {
+      padding: 32px 64px;
+      background-color: $white;
+      &__input {
+        &__field {
+          &__box {
+            height: 48px;
+            width: 328px;
+            background-color: $white;
+            padding: 10px 16px 8px;
+            margin: 0 0 24px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            line-height: 1.5;
+            font-size: 14px;
+          }
+        }
+        &__submit-btn {
+          font-size: 14px;
+          color: $white;
+          height: 50px;
+          width: 328px;
+          margin: 24px 0 0;
+          background-color: $submit-red;
+        }
+      }
+      &__recaptcha img{
+        max-width: 300px;
+      }
+      &__btn {
+        text-decoration: none;
+        height: 50px;
+        width: 328px;
+        display: block;
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        line-height: 50px; 
+        position: relative;
+        margin: 0 auto;
+        &__icon {
+          position: absolute;
+          font-size: 20px;
+          display: inline-block;
+          line-height: 50px;
+          left: 20px;
+        }
+      }
+      &__facebook {
+        background-color: $facebook;
+      }
+      &__google {
+        color: $black;
+        background-color: $white;
+        border: #979797 solid 1px;
+        margin: 16px auto 0;
+      }
+      &__link {
+        color: $link-blue;
+        text-decoration: none;
+        margin: 40px 0 0;
+      }
+    }
+  }
+}

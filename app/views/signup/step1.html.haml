@@ -1,0 +1,81 @@
+= render partial: "signup-header"
+
+.signup-main
+  .signup-box
+    .signup-box__title
+      %h2 会員情報入力
+    .signup-box__form
+      .signup-box__form__content
+        = form_for (""), html: { class: "field-wrapper" } do |f|
+          .field
+            .field__label
+              = f.label :ニックネーム, class: 'field__label__title'
+              %span.field__label__require 必須
+            .field__input
+              = f.text_field :name, class: 'field__input__default',placeholder: "例）メルカリ太郎"
+              %li.field__input__error ニックネームを入力してください
+          .field
+            .field__label
+              = f.label :メールアドレス, class: 'field__label__title'
+              %span.field__label__require 必須
+            .field__input
+              = f.text_field :email, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
+              %li.field__input__error フォーマットが不適切です
+          .field
+            .field__label
+              = f.label :パスワード, class: 'field__label__title'
+              %span.field__label__require 必須
+            .field__input
+              = f.text_field :password, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
+              %li.field__input__error 7文字以上128文字以下で入力してください
+              %p.field__input__info ※英字と数字の両方を含めて設定してください
+            .field__checkbox
+              = f.check_box :checkbox, class: 'field__checkbox__box'
+              = f.label :パスワードを表示する, class: 'field__checkbox__label'
+          .field
+            %h3.field__confirm 本人確認
+            %p.field__confirm-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .field
+            .field__label
+              = f.label :"お名前(全角)", class: 'field__label__title'
+              %span.field__label__require 必須
+            .field__input
+              = f.text_field :name, class: 'field__input__half',placeholder: "例）山田"
+              = f.text_field :name, class: 'field__input__half',placeholder: "例）彩"
+          .field
+            .field__label
+              = f.label :"お名前カナ(全角)", class: 'field__label__title'
+              %span.field__label__require 必須
+            .field__input
+              = f.text_field :name, class: 'field__input__half',placeholder: "例）ヤマダ"
+              = f.text_field :name, class: 'field__input__half',placeholder: "例）アヤ"
+          .field
+            .field__label
+              = f.label :生年月日, class: 'field__label__title'
+              %span.field__label__require 必須
+            .field__input
+              = f.select :year, [["--", "--"],[2019, 2019],[2018, 2018]], {}, class: 'field__input__select'
+              %span 年
+              = f.select :month, [["--", "--"],[1, 1],[2, 2]],{}, class: 'field__input__select'
+              %span 月
+              = f.select :date, [["--", "--"],[1, 1],[2, 2]],{}, class: 'field__input__select'
+              %span 日
+              %li.field__input__error 生年月日を入力してください
+            %p.field__input__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .field
+            %p.field__info
+              「次へ進む」のボタンを押すことにより、
+              %a{ :href => '#' } 利用規約
+              に同意したものとみなします
+          = f.submit "次へ進む", class: "submit-btn"
+          %a.guide-link{ :href => '#' } 本人情報の登録について〉
+          .field
+            .field__temp-text
+              %p
+                This site is protected by reCAPTCHA and the Google
+                %a{ :href => '#' } Privacy Policy
+                and
+                %a{ :href => '#' } Terms of Service
+                apply.
+
+= render partial: "common-footer"

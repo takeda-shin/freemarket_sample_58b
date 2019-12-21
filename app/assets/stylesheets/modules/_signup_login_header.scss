@@ -1,0 +1,82 @@
+.common-header {
+  height: 128px;
+  width: 100%;
+  background-color: $background-gray;
+  text-align: center;
+  .common-header__logo {
+    height: 50px;
+    width: 185px;
+    margin: 0 auto;
+    line-height: 128px;
+  }
+}
+.signup-header{
+  height: 128px;
+  width: 100%;
+  background-color: $background-gray;
+  text-align: center;
+  .signup-header__logo {
+    display: inline-block;
+    height: 49px;
+    width: 185px;
+    line-height: 128px;
+  }
+  .progress {
+    padding: 40px 0 0 44px;
+    border: 0;
+    left: 190px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    &__all {
+      margin: 0;
+      &__step{
+        min-width: 60px;
+        margin: 0 40px 0 0;
+        padding: 0;
+        font-size: 12px;
+        height: 0;
+        display: inline-block;
+        color: $progress-bar-gray;
+        position: relative;
+        z-index: 40;
+        &__status {
+          position: absolute;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          margin: 8px auto 0;
+          background-color: $progress-bar-gray;
+          left: 40%;
+          z-index: 30;
+        }
+        &__bar {
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          display: block;
+          top: 31px;
+          bottom: 5px;
+          left: 50%;
+          display: flex;
+          background-color: $background-gray;
+          z-index: 10;
+          &--before {
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            right: 100%;
+            background-color: $progress-bar-gray;
+          }
+          &--after {
+            display: inline-block;
+            height: 2px;
+            width: 100%;
+            left: 50%;
+            background-color: $progress-bar-gray;
+          }
+        }
+      }
+    } 
+  }
+}
