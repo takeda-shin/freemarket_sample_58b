@@ -1,0 +1,50 @@
+.footer__screen
+  = image_tag src= "https://i.gyazo.com/6ad89919968da5392af9c970ec33a3fa.jpg"
+.footer__message
+  .footer__message__left
+    %h3 メルカリについて
+    .footer__message__left__contents
+      %p 会社概要（運営会社）
+      %p 採用情報
+      %p プレスリリース
+      %p 公式ブログ
+      %p メルカリロゴ利用ガイドライン
+      = link_to "https://twitter.com/", class: "footer__message__left__contents__logo" do
+        = icon('fab', 'twitter')
+      = link_to "https://www.facebook.com/", class: "footer__message__left__contents__logo" do
+        = icon('fab', 'facebook-square')
+
+  .footer__message__left
+    %h3 ヘルプ＆ガイド
+    .footer__message__left__contents
+      %p メルカリガイド
+      %p らくらくメルカリ便
+      %p ゆうゆうメルカリ便
+      %p 大型メルカリ便
+      %p 車体取引ガイド
+      %p メルカリあんしん・あんぜん宣言！
+      %p 偽ブランド品撲滅への取り組み
+      %p メルカリボックス
+    
+  .footer__message__right
+    %h3 プライバシーと利用規約
+    .footer__message__right__contents
+      .footer__message__right__contents__left
+        %p プライバシーポリシー
+        %p メルカリ利用規約
+        %p あんしんスマホサポート制度に関する利用特約
+        %p コンプライアンスポリシー
+      .footer__message__right__contents__right
+        %p 個人データの安全管理に係る基本方針
+        %p 特定商取引に関する表記
+        %p 資金決済法に基づく表示
+        %p 法令順守と犯罪抑止のために
+      
+  .footer__message__world
+    %h3 国
+    .footer__message__world__contents
+      %p 日本
+      %p United States
+.footer__bottom
+  = image_tag src = "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg"
+  %p © Mercari, Inc

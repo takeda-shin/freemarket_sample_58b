@@ -1,0 +1,46 @@
+.header
+  = render 'shared/header'
+.body
+  .body__buy
+    .body__buy__title
+      ダミーヘッドマイク
+    .body__buy__top
+      = render 'making/layouts/photo'
+      = render 'making/layouts/status'
+    .body__buy__price
+      %a.value ¥1,000,000
+      .body__buy__price__describe
+        %p.tax (税込）
+        %p.text 送料込み
+    .body__buy__btn
+      購入画面に進む
+    .body__buy__description
+      頭の形をしているので、まるで直接話しかけられているように録音できる超高性能マイク！
+    .body__buy__comment
+      .body__buy__comment__left
+        .body__buy__comment__left__text
+          = fa_icon "heart-o"
+          %p.click いいね！
+        .body__buy__comment__left__text
+          = fa_icon 'flag'
+          %p.click 不適切な商品の報告
+      .body__buy__comment__right
+        .body__buy__comment__right__text
+          = fa_icon 'lock'
+          安心安全への取り組み
+  .body__message
+    %p.alert 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .form
+      = form_tag('/message', method: :get, class: 'message-form')
+    .btn
+      コメントする
+  .body__sns
+    .body__sns__click
+      = fa_icon 'facebook-square', class: "facebook"
+      = fa_icon 'twitter-square', class: "twitter"
+      = fa_icon 'pinterest-square', class: "pinterest"
+  .body__other
+    =render 'making/layouts/other-me'
+    =render 'making/layouts/other-category'
+.footer
+  = render 'shared/footer'
