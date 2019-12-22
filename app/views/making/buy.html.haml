@@ -1,39 +1,58 @@
 = render partial: "signup/common-header"
 
 .wrapper
-  .body
-    .body__title
-      購入内容の確認
-    .body__product
-      .body__product__left
-        = image_tag src = "https://i.gyazo.com/e636e99ac0c0a823788221d5ceb3ba67.png", class: "body__product__left__image"
-      .body__product__right
-        .body__product__right__top
-          ダミーヘッドマイク
-        .body__product__right__bottom
-          ¥1,000,000（税込）送料込み
-    .body__value
-      .body__value__top
-        %p.left 支払金額
-        %p.right ¥1,000,000
-      .body__card__bottom
-        %a.check
-        %p.text
-    .body__card
-      .body__card__top
-        .body__card__top__left
+  .product-buy-body
+    .product-buy-body__box
+      .product-buy-body__box__title
+        購入内容の確認
+    .product-buy-body__box
+      .product-buy-body__box__product
+        .product-buy-body__box__product__left
+          = image_tag src = "https://i.gyazo.com/e636e99ac0c0a823788221d5ceb3ba67.png", class: "product-buy-body__box__product__left__image"
+        .product-buy-body__box__product__right
+          .product-buy-body__box__product__right__top
+            ダミーヘッドマイク
+          .product-buy-body__box__product__right__bottom
+            ¥1,000,000（税込）送料込み
+    .product-buy-body__box
+      .product-buy-body__box__value
+        .product-buy-body__box__value__top
+          %p.left 支払金額
+          %p.right ¥1,000,000
+        .product-buy-body__box__value__bottom
+          = fa_icon 'stop', class: "check"
+          %p.text ポイントを使用（所持ポイント:P50）
+    .product-buy-body__box
+      .product-buy-body__box__card
+        .product-buy-body__box__card__title
+          %p.left 支払方法
+          %p.right 変更する
+        .product-buy-body__box__card__content
           %p.title クレジットカード
           %p.card ****************2019
           %p.limit 有効期限　明後日
-          %a.image master card
-        .body__card__top__right
-          変更する
-    .body__address
-      .body__address__left
-        火星県南半球市東大陸町3-1-4 オリンポス山５９２６号室 
-      .body__address__right
-        変更する
-    .body__btn
-      購入する
+          = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1215422380",class: "product-buy-body__box__card__content__image"
+    .product-buy-body__box
+      .product-buy-body__box__address
+        .product-buy-body__box__address__title
+          %p.left 配送先
+          %p.right 変更する
+        .product-buy-body__box__address__contents
+          %p 〒173-2050
+          %p 火星県南半球市東大陸町3-1-4 オリンポス山５９２号室 
+          %p 枝尾昭太
+    .product-buy-body__box
+      .product-buy-body__box__only
+        %p この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます
+    .product-buy-body__box
+      .product-buy-body__box__btn
+        購入する
+    .product-buy-body__box
+      .product-buy-body__box__application
+        %p アプリをお持ちでない方は以下よりインストールしてご利用いただけます
+        .product-buy-body__box__application__logo
+          = image_tag src = "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1714804574",class: "product-buy-body__box__application__logo__mark"
+          = image_tag src = "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1714804574",class: "product-buy-body__box__application__logo__mark"
+    
 
 = render partial: "signup/common-footer"

@@ -14,14 +14,13 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "making#index"
+  root to: "making#buy"
 
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
 
 
 
-  root to: 'users#show' 
   resources :users, only: [:index]
 
   resources :products, only: [:index]
