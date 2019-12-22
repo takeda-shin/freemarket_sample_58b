@@ -2,8 +2,8 @@
   .left-content__bar
     %ul.left-content__bar__list
       %li.left-content__bar__list__item
-        = link_to "", "https://www.mercari.com/jp/mypage/notification/"
-        マイページ
+        = link_to "/users/:id", class: "left-content__bar__list__item__side__link" do
+          マイページ
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 
       %li.left-content__bar__list__item__side  

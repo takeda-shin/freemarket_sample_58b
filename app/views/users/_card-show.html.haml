@@ -1,0 +1,25 @@
+.payment
+  .payment-content
+    %h2.payment-content__ment 支払い方法
+    .payment-box
+      %section
+        .payment-box__list 
+          %h3.payment-box__list__font クレジットカード一覧
+
+        %ul.payment-box__list__card    
+          %li 
+            %form 
+              %figure.payment-box__list__card__image
+                = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", width: "45", height: "15"
+
+              .card-nunber
+                ************3333 
+              .card-date
+                05 / 24   
+              %button.payment-delete
+                削除する
+
+      .payment-method
+        = link_to "", "",class: "payment-method__list"
+        %span 支払い方法について
+        = fa_icon "chevron-right", class: "payment-method__list--icon"       
