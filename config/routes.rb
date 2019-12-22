@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   root to: "making#buy"
 
   resources :products, only: [:index, :show]
@@ -21,9 +22,12 @@ Rails.application.routes.draw do
 
 
 
+
   resources :users, only: [:index]
 
-  resources :products, only: [:index]
+  root to: 'users#show' 
+  resources :users, only: [:index, :new]
+
 
 
 end

@@ -1,29 +1,31 @@
-= render partial: "common-header"
+.signup-login-wrapper
 
-.login-main
-  .login-box
-    .login-box__no-account
-      %p アカウントをお持ちでない方はこちら
-      = link_to "#", class: "login-box__no-account__btn" do
-        新規会員登録
-    .login-box__form
-      = link_to "#", class: "login-box__form__btn login-box__form__facebook" do
-        = icon('fab', 'facebook', class: "login-box__form__btn__icon")
-        Facebookでログイン
-      = link_to "#", class: "login-box__form__btn login-box__form__google" do
-        = icon('fab', 'google', class: "login-box__form__btn__icon")
-        googleでログイン
-    .login-box__form
-      = form_for (""), html: { class: "login-box__form__input" } do |f|
-        .login-box__form__input__field
-          = f.text_field :mail, class: 'login-box__form__input__field__box',placeholder: "メールアドレス"
-        .login-box__form__input__field
-          = f.text_field :password, class: 'login-box__form__input__field__box',placeholder: "パスワード"
-        .login-box__form__recaptcha
-          = image_tag src='https://kanntann.com/wp-content/uploads/2018/02/9b564b94bbf2f711e17c70ae1624a1f2-4.png'
-        = f.submit "ログイン", class: "login-box__form__input__submit-btn"
-        .login-box__form__link
-          = link_to "#" do
-            パスワードをお忘れの方
+  = render partial: "common-header"
 
-= render partial: "common-footer"
+  .login-main
+    .login-box
+      .login-box__no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to "#", class: "login-box__no-account__btn" do
+          新規会員登録
+      .login-box__form
+        = link_to "#", class: "login-box__form__btn login-box__form__facebook" do
+          = fa_icon "facebook-square", class: "login-box__form__btn__icon"
+          Facebookでログイン
+        = link_to "#", class: "login-box__form__btn login-box__form__google" do
+          = fa_icon "google", class: "login-box__form__btn__icon"
+          googleでログイン
+      .login-box__form
+        = form_for (""), html: { class: "login-box__form__input" } do |f|
+          .login-box__form__input__field
+            = f.text_field :mail, class: 'login-box__form__input__field__box',placeholder: "メールアドレス"
+          .login-box__form__input__field
+            = f.text_field :password, class: 'login-box__form__input__field__box',placeholder: "パスワード"
+          .login-box__form__recaptcha
+            = image_tag src='https://kanntann.com/wp-content/uploads/2018/02/9b564b94bbf2f711e17c70ae1624a1f2-4.png'
+          = f.submit "ログイン", class: "login-box__form__input__submit-btn"
+          .login-box__form__link
+            = link_to "#" do
+              パスワードをお忘れの方
+
+  = render partial: "common-footer"

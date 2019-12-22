@@ -1,0 +1,20 @@
+.logout{
+  float: right;
+  background-color: #fff;
+  .logout-content{
+    height:179px;
+    width: 700px;
+    &__font{
+      padding: 64px;
+      max-width: 320px;
+      margin: 0 auto;
+      &--btn {
+        background-color: #ea352d;
+        width: 100%;      
+        height: 50px;
+        font-size: 14px;
+        color: #fff
+      }
+    }
+  }   
+}
