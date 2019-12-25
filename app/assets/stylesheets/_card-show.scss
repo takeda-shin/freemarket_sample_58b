@@ -3,6 +3,7 @@
   width: 700px;
   height: 364px; 
   background-color: #fff;
+
   .payment-content{
     margin: 0;
 
@@ -17,9 +18,11 @@
     }
     .payment-box{
       padding: 64px;
-      section{
+
+      &__list{
         height: 129px;
-        .payment-box__list  {
+
+        &__card  {
           max-width: 320px;
           margin: 0 auto; 
                  
@@ -28,19 +31,21 @@
             font-weight: 600;
           }
         }
-        .payment-box__list__card  {
+        .payment-box__list__content {
+          border-bottom: 1px solid #eee;
           
-          li{
-            padding: 24px 0;
-            border-bottom: 1px solid #eee;
+          &__box{
+            padding: 24px 0;           
             height: 64px;
-            form{
+
+            &__form{
               height: 100%;
               margin: 0 125px; 
               position: relative;
               max-width: 320px;
               margin: 0 auto;
-              figure{
+              
+              &__image{
                 margin: 0 auto;
               }
 
@@ -48,10 +53,12 @@
                 margin: 8px 0 0;
                 font-size: 16px;  
               }
+              
               .card-date{
                 margin: 8px 0 0;
                 font-size: 16px;
               }
+              
               button.payment-delete{
                 position: absolute;
                 top: 0;

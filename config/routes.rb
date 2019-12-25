@@ -15,15 +15,15 @@ Rails.application.routes.draw do
   end
 
   
-
+  
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
 
 
 
   root to: 'users#show' 
-  resources :users, only: [:index, :new, :show]
-  get 'logout', to: "users#logout" 
+  resources :users, only: [:index, :new, :show, :edit]
+   
 
 
 end

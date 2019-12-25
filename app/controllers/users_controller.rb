@@ -8,6 +8,6 @@ class UsersController < ApplicationController
   def new
   end
 
-  def logout
+  def edit
   end
 end

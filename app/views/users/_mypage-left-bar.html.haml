@@ -2,7 +2,7 @@
   .left-content__bar
     %ul.left-content__bar__list
       %li.left-content__bar__list__item
-        = link_to root_path, class: "left-content__bar__list__item__side__link" do
+        = link_to "root_path", class: "left-content__bar__list__item__side__link" do
           マイページ
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 
@@ -98,8 +98,8 @@
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"    
       
       %li.left-content__bar__list__item__side 
-        = link_to "", "https://www.mercari.com/jp/mypage/notification/"
-        支払い方法
+        = link_to "/users/:id/edit", class: "left-content__bar__list__item__side__link" do
+          支払い方法
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 
       %li.left-content__bar__list__item__side 
@@ -119,7 +119,7 @@
 
 
       %li.left-content__bar__list__item__side 
-        = link_to  logout_path, class: "left-content__bar__list__item__side__link" do
+        = link_to  new_user_path, class: "left-content__bar__list__item__side__link" do
           ログアウト
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 

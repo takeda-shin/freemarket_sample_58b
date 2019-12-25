@@ -2,14 +2,14 @@
   .payment-content
     %h2.payment-content__ment 支払い方法
     .payment-box
-      %section
-        .payment-box__list 
-          %h3.payment-box__list__font クレジットカード一覧
+      %section.payment-box__list
+        .payment-box__list__card
+          %h3.payment-box__list__card__font クレジットカード一覧
 
-        %ul.payment-box__list__card    
-          %li 
-            %form 
-              %figure.payment-box__list__card__image
+        %ul.payment-box__list__content    
+          %li.payment-box__list__content__box 
+            %form.payment-box__list__content__box__form 
+              %figure.payment-box__list__content__box__form__image
                 = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", width: "45", height: "15"
 
               .card-nunber
