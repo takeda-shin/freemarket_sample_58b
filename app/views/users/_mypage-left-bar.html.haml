@@ -2,7 +2,7 @@
   .left-content__bar
     %ul.left-content__bar__list
       %li.left-content__bar__list__item
-        = link_to "/users/:id", class: "left-content__bar__list__item__side__link" do
+        = link_to root_path, class: "left-content__bar__list__item__side__link" do
           マイページ
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 
@@ -119,7 +119,7 @@
 
 
       %li.left-content__bar__list__item__side 
-        = link_to  new_user_path, class: "left-content__bar__list__item__side__link" do
+        = link_to  logout_path, class: "left-content__bar__list__item__side__link" do
           ログアウト
         = fa_icon "chevron-right",class: "left-content__bar__list__item--icon"
 

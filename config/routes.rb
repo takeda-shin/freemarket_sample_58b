@@ -21,9 +21,9 @@ Rails.application.routes.draw do
 
 
 
-  root to: 'users#destroy' 
-  resources :users
-
+  root to: 'users#show' 
+  resources :users, only: [:index, :new, :show]
+  get 'logout', to: "users#logout" 
 
 
 end
