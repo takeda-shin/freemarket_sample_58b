@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   root to: 'users#show' 
   resources :users, only: [:index, :new]
 
+  get 'users/identification', to: 'users#identification'
+
 
 
 end

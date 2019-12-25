@@ -1,0 +1,93 @@
+.identification-content{
+  float: right;
+  width: 700px;
+  background-color: #fff;
+  .identification-contents{
+    &__top{
+      font-size: 24px;
+      padding: 8px 24px;
+      text-align: center;
+      height: 34px;
+      line-height: 1.5;
+      font-weight: 600;
+      border-bottom: solid 1px $background-gray;
+    }
+    &__form{
+      padding: 64px;
+      width: 572px;
+      overflow: hidden;
+      &__error{
+        font-size: 14px;
+        color: $submit-red;
+        padding: 8px 0 0 0;
+        text-align: center;
+      }
+      &__info{
+        margin: 8px 0 0;
+      }
+      &__link{
+        margin: 8px 0 0;
+        text-align: right;
+        &__text{
+          color: $link-blue;
+          text-decoration: none;
+        }
+      }
+      &__group{
+        margin: 40px 0 0;
+        &__title{
+          font-weight: 600;
+          overflow: hidden;
+        }
+        &__content{
+          margin: 8px 0 0;
+        }
+        &__any{
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          color: $white;
+          background-color: $progress-bar-gray;
+        }
+        &__input{
+          height: 48px;
+          width: 572px;
+          background-color: $white;
+          padding: 10px 16px 8px;
+          margin: 8px 0 0;
+          border: 1px solid $progress-bar-gray;
+          border-radius: 4px;
+          line-height: 1.5;
+          font-size: 14px;
+          box-sizing: border-box;
+        }
+        &__select{
+          height: 48px;
+          width: 572px;
+          background-color: $white;
+          padding: 10px 16px 8px;
+          margin: 8px 0 0;
+          border: 1px solid $progress-bar-gray;
+          border-radius: 4px;
+          line-height: 1.5;
+          font-size: 14px;
+          box-sizing: border-box;
+        }
+        &__error{
+          font-size: 14px;
+          color: $submit-red;
+          padding: 8px 0 0 0;
+          list-style: none;
+          background-color: $white;
+        }
+      }
+      &__submit-btn{
+        font-size: 14px;
+        color: $white;
+        height: 50px;
+        width: 572px;
+        margin: 40px 0 40px;
+        background-color: $submit-red;
+      }
+    }
+  }
+}
