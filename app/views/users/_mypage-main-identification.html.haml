@@ -1,0 +1,59 @@
+.identification-content
+  .identification-contents
+    %h2.identification-contents__top 本人情報の登録
+    = form_for (""), html: { class: "identification-contents__form" } do |f|
+      %p.identification-contents__form__error
+        住所の変更は、メルカリアプリの「マイページ＞個人情報設定＞本人情報＞氏名・生年月日」から行ってください。
+      %p.identification-contents__form__info
+        お客さまの本人情報をご登録ください。
+        %br 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+      .identification-contents__form__link
+        = link_to "#", class: "identification-contents__form__link__text" do
+          本人確認書類のアップロードについて>
+
+      .identification-contents__form__group
+        =f.label :お名前, class: 'identification-contents__form__group__title'
+        %p.identification-contents__form__group__content
+          メルカリ 太郎
+
+      .identification-contents__form__group
+        =f.label :お名前カナ, class: 'identification-contents__form__group__title'
+        %p.identification-contents__form__group__content
+          メルカリ タロウ
+
+      .identification-contents__form__group
+        =f.label :生年月日, class: 'identification-contents__form__group__title'
+        %p.identification-contents__form__group__content
+          1988/01/11
+
+      .identification-contents__form__group
+        =f.label :郵便番号, class: 'identification-contents__form__group__title'
+        %span.identification-contents__form__group__any 任意
+        = f.text_field :postnumber, class: 'identification-contents__form__group__input',placeholder: "例）1234567"
+        %li.identification-contents__form__group__error フォーマットが不適切です
+
+      .identification-contents__form__group
+        =f.label :都道府県, class: 'identification-contents__form__group__title'
+        %span.identification-contents__form__group__any 任意
+        = f.select :prefecture, [["--", "--"],["北海道", "北海道"],["青森県", "青森県"]], {}, class: 'identification-contents__form__group__select'
+
+      .identification-contents__form__group
+        =f.label :市区町村, class: 'identification-contents__form__group__title'
+        %span.identification-contents__form__group__any 任意
+        = f.text_field :postnumber, class: 'identification-contents__form__group__input',placeholder: "例）横浜市緑区"
+            
+      .identification-contents__form__group
+        =f.label :番地, class: 'identification-contents__form__group__title'
+        %span.identification-contents__form__group__any 任意
+        = f.text_field :postnumber, class: 'identification-contents__form__group__input',placeholder: "例）青山1-1-1"
+
+      .identification-contents__form__group
+        =f.label :建物名, class: 'identification-contents__form__group__title'
+        %span.identification-contents__form__group__any 任意
+        = f.text_field :postnumber, class: 'identification-contents__form__group__input',placeholder: "例）柳ビル103"
+
+      = f.submit "登録する", class: "identification-contents__form__submit-btn"
+
+      .identification-contents__form__link
+        = link_to "#", class: "identification-contents__form__link__text" do
+          本人情報の登録について>
