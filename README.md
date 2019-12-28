@@ -9,7 +9,9 @@
 |first_name_kana|string|null :false|
 |email|string|null: false|
 |password|string|null: false|
-|birthday|integer|null: false|
+|birthday_year|integer|null: false|
+|birthday_month|integer|null: false|
+|birthday_date|integer|null: false|
 |phone_number|string|unique:true|
 |profile|string|
 
