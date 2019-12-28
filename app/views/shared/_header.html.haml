@@ -39,6 +39,5 @@
             
             %li
               = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "", width: "32", height: "32"
-              %span マイページ
-
-
+              = link_to user_path(:id), class: "header-right__menu__font" do 
+                マイページ

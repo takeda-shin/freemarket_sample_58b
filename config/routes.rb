@@ -14,22 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-
-  root to: "making#buy"
+  root to: "products#index"
 
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
-
-
-
-
-  resources :users, only: [:index]
-
-  root to: 'users#show' 
-  resources :users, only: [:index, :new]
-
-  get 'users/identification', to: 'users#identification'
-
-
-
+  resources :users, only: [:index, :new, :show, :edit]
 end
