@@ -14,7 +14,7 @@
 |profile|string|
 
 ### Association
-- has_many :products　
+- has_many :products
 - has_many :comments, :dependent => :destroy
 - has_one :user_address
 - has_one :card_info
