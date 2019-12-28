@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   
 
 
-  root to: "making#buy"
+  
 
 
   resources :products, only: [:index, :show]
@@ -26,9 +26,19 @@ Rails.application.routes.draw do
 
 
 
+
   
   resources :users, only: [:index, :new, :show, :edit]
    
+
+
+  
+
+ 
+
+  get 'users/identification', to: 'users#identification'
+
+
 
 
 end
