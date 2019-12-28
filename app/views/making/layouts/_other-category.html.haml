@@ -1,15 +1,15 @@
-.body__other__contents
-  .body__other__contents__title
+.product-show-body__other__contents
+  .product-show-body__other__contents__title
     %p 音楽　その他の出品
-  .body__other__contents__view
+  .product-show-body__other__contents__view
     - 3.times do |i|
-      .body__other__contents__view__product
+      .product-show-body__other__contents__view__product
         - 2.times do |i|
-          .body__other__contents__view__product__box
-            = link_to image_tag(src = "https://images-na.ssl-images-amazon.com/images/I/A1YE2Zm13RL._SL1500_.jpg", class: "body__other__contents__view__product__box__image") 
+          .product-show-body__other__contents__view__product__box
+            = link_to image_tag(src = "https://images-na.ssl-images-amazon.com/images/I/A1YE2Zm13RL._SL1500_.jpg", class: "product-show-body__other__contents__view__product__box__image") 
             %p.text ALTER EGO【豪華盤】
-            .body__other__contents__view__product__box__bottom
+            .product-show-body__other__contents__view__product__box__bottom
               %p.price ¥3,301
-              .body__other__contents__view__product__box__bottom__good
+              .product-show-body__other__contents__view__product__box__bottom__good
                 = fa_icon "heart-o"
                 %p.value 10

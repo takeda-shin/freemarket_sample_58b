@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   root to: "products#index"
   
+
+
+  root to: "making#buy"
+
+
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
 
