@@ -56,12 +56,7 @@
                 = f.label :生年月日, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.select :birthday_year, [["--", "--"],[2019, 2019],[2018, 2018]], {}, class: 'field__input__select'
-                %span 年
-                = f.select :birthday_month, [["--", "--"],[1, 1],[2, 2]],{}, class: 'field__input__select'
-                %span 月
-                = f.select :birthday_date, [["--", "--"],[1, 1],[2, 2]],{}, class: 'field__input__select'
-                %span 日
+                != sprintf(f.date_select(:birthday, prefix:'birthday', with_css_classes:'field__input__select', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
                 %li.field__input__error 生年月日を入力してください
               %p.field__input__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             .field

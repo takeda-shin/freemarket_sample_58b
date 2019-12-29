@@ -253,3 +253,12 @@
   float: right;
   margin: 24px 0 0;
 }
+
+.year,.month,.day {
+  height: 48px;
+  width: 76px;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: $white;
+  touch-action: manipulation;
+}
