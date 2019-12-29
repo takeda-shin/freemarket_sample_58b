@@ -152,6 +152,15 @@
         background-color: $white;
         touch-action: manipulation;
       }
+      &__select-prefecture {
+        height: 48px;
+        width: 343px;
+        padding: 0 10px;
+        cursor: pointer;
+        background-color: $white;
+        touch-action: manipulation;
+        border: 1px solid $progress-bar-gray;
+      }
       span {
         margin: 0px 2px;
         font-size: 14px;

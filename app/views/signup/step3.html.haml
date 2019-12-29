@@ -36,7 +36,8 @@
                 = f.label :都道府県, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.select :prefectures, UserAddress.prefectures.keys, {prompt: '--'}, class: 'field__input__select'            .field
+                = f.select :prefectures, UserAddress.prefectures.keys, {prompt: '--'}, class: 'field__input__select-prefecture'
+            .field
               .field__label
                 = f.label :市町村, class: 'field__label__title'
                 %span.field__label__require 必須
