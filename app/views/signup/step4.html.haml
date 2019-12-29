@@ -28,10 +28,7 @@
                 = f.label :有効期限, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.select :use_limit_month, [["--", "--"],[1, 1],[2, 2]], {}, class: 'field__input__select'
-                %span 月
-                = f.select :use_limit_year, [["--", "--"],[1, 1],[2, 2]], {}, class: 'field__input__select'
-                %span 年
+                != sprintf(f.date_select(:use_limit,with_css_classes:'field__input__select',prompt:"--", order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
             .field
               .field__label
                 = f.label :セキュリティナンバー, class: 'field__label__title'
