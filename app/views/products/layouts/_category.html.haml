@@ -8,9 +8,12 @@
   .body__contents__view
     - 4.times do |i|
       %p.title 新着 ダミーヘッドマイク
-      - 5.times do |i|
+      - @products.each do |product|
         .body__contents__view__product
           .body__contents__view__product__box
-            = link_to image_tag(src = "https://i.gyazo.com/e636e99ac0c0a823788221d5ceb3ba67.png", class: "body__contents__view__product__box__image") 
-            %a.text ダミーヘッドマイク
-            %a.value ¥1,000,000
+            //= link_to image_tag(src = "https://i.gyazo.com/e636e99ac0c0a823788221d5ceb3ba67.png", class: "body__contents__view__product__box__image") 
+            = link_to image_tag(src = "#{product.image}", class: "body__contents__view__product__box__image")
+            .body__contents__view__product__box__text
+              = product.text
+            .body__contents__view__product__box__value
+              = "¥#{product.price}"
