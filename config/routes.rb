@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :signup do
     collection do
       get 'index' #登録方法選択
