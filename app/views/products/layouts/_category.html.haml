@@ -7,13 +7,13 @@
     %a おもちゃ・ホビー・グッズ"
   .body__contents__view
     - 4.times do |i|
-      %p.title 新着 ダミーヘッドマイク
-      - @products.each do |product|
+      %p.title 新着 Vtuber
+      - @categorys.each do |category|
         .body__contents__view__product
           .body__contents__view__product__box
-            //= link_to image_tag(src = "https://i.gyazo.com/e636e99ac0c0a823788221d5ceb3ba67.png", class: "body__contents__view__product__box__image") 
-            = link_to image_tag(src = "#{product.image}", class: "body__contents__view__product__box__image")
+            .body__contents__view__product__box__image
+              = link_to image_tag(src = "#{category.image}", class: "body__contents__view__product__box__image__image-content")
             .body__contents__view__product__box__text
-              = product.text
+              = category.name
             .body__contents__view__product__box__value
-              = "¥#{product.price}"
+              = "¥#{category.price.to_s(:delimited, delimiter: ',')}"
