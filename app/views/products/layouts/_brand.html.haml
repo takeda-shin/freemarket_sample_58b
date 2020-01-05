@@ -12,7 +12,7 @@
         .body__contents__view__product
           .body__contents__view__product__box
             .body__contents__view__product__box__image
-              = link_to image_tag(src = "#{brand.image}", class: "body__contents__view__product__box__image__image-content")
+              = link_to image_tag(brand.image, class: "body__contents__view__product__box__image__image-content")
             .body__contents__view__product__box__text
               = brand.name
             .body__contents__view__product__box__value
