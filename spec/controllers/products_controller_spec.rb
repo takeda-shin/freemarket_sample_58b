@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 describe ProductsController do
-  describe 'GET #index' do
-    it "populates an array of products ordered by created_at DESC" do
-      #product = FactoryBot.create_list(:product, 3)
+  describe '商品一覧画面' do
+    it "商品一覧を表示する" do
+      product = FactoryBot.create_list(:product, 3)
       get :index
-      #expect(assigns(:products)).to match(products.sort{ |a, b| b.created_at <=> a.created_at } )
     end
 
     it "renders the :index template" do

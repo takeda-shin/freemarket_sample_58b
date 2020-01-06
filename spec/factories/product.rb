@@ -1,8 +1,18 @@
 FactoryBot.define do
   factory :product do
-    #name  {"abe"}
+    name  {"abe"}
+    text {"text"}
+    category_id {0}
+    brand_id {0}
+    price {0}
+    product_size {"abe"}
+    condition {"abe"}
+    shipping_charge {"abe"}
+    shipping_method {"abe"}
+    delivery_area {"abe"}
+    user_id {0}
     image {"hoge.png"}
-    #sequence(:image) {Faker::Internet.image}
-    #created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
+    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
+    updated_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
   end
 end
