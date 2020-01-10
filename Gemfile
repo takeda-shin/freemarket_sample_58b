@@ -93,3 +93,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-sass'
 gem 'devise'
+
+#SMS認証
+gem 'twilio-ruby', '~> 5.31.2'
+gem 'phony_rails'
