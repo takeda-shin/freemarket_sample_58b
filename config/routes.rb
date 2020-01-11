@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   resources :making, only: [:index]
   get 'making/buy' => 'making#buy'
   resources :users, only: [:index, :new, :show, :edit]
+  get 'users/identification', to: 'users#identification'
 end
