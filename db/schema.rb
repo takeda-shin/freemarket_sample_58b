@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_29_074004) do
+ActiveRecord::Schema.define(version: 2020_01_18_000358) do
+
+  create_table "card_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "card_number", null: false
+    t.integer "use_limit", null: false
+    t.integer "security_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", default: "abe", null: false
+    t.text "text", null: false
+    t.string "category_id", null: false
+    t.integer "brand_id"
+    t.integer "price", null: false
+    t.string "product_size"
+    t.string "condition", null: false
+    t.string "shipping_charge"
+    t.string "shipping_method"
+    t.string "delivery_area", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", default: "2020-01-01 23:59:59", null: false
+    t.datetime "updated_at", default: "2020-01-01 23:59:59", null: false
+    t.string "image", default: "hoge.png"
+  end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
