@@ -18,9 +18,11 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
+  get 'making/buy' => 'making#buy'
   resources :users, only: [:index, :new, :show, :edit]
 
   root to: 'exhibition#index'
 
 
+  get 'users/identification' => 'users#identification'
 end
