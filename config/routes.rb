@@ -14,9 +14,13 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "products#index"
+  #root to: "products#index"
 
   resources :products, only: [:index, :show]
   resources :making, only: [:index]
   resources :users, only: [:index, :new, :show, :edit]
+
+  root to: 'exhibition#index'
+
+
 end
