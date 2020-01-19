@@ -2,20 +2,21 @@
   = render 'shared/header'
 .product-show-body
   .product-show-body__buy
-    .product-show-body__buy__title
-      ダミーヘッドマイク
+    .product-show-body__buy__title 
+      = @products.name
     .product-show-body__buy__top
       = render 'making/layouts/photo'
       = render 'making/layouts/status'
     .product-show-body__buy__price
-      %a.value ¥1,000,000
+      %a.value 
+        %p ￥#{@products.price}
       .product-show-body__buy__price__describe
         %p.tax (税込）
         %p.text 送料込み
     .product-show-body__buy__btn
       購入画面に進む
     .product-show-body__buy__description
-      頭の形をしているので、まるで直接話しかけられているように録音できる超高性能マイク！
+      = @products.text
     .product-show-body__buy__comment
       .product-show-body__buy__comment__left
         .product-show-body__buy__comment__left__text
@@ -36,9 +37,15 @@
       コメントする
   .product-show-body__sns
     .product-show-body__sns__click
-      = fa_icon 'facebook-square', class: "facebook"
-      = fa_icon 'twitter-square', class: "twitter"
-      = fa_icon 'pinterest-square', class: "pinterest"
+      = link_to '#' do
+        = fa_icon 'facebook-square', class: "facebook"
+
+      = link_to '#' do  
+        = fa_icon 'twitter-square', class: "twitter"
+
+      = link_to '#' do   
+        = fa_icon 'pinterest-square', class: "pinterest"
+        
   .product-show-body__other
     =render 'making/layouts/other-me'
     =render 'making/layouts/other-category'

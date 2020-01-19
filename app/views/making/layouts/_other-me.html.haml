@@ -1,15 +1,16 @@
 .product-show-body__other__contents
   .product-show-body__other__contents__title
-    %p 枝尾さんのその他の出品
+    = link_to users_path(:id) do
+      %p #{@users.nickname}さんのその他の出品
   .product-show-body__other__contents__view
     - 3.times do |i|
       .product-show-body__other__contents__view__product
         - 2.times do |i|
           .product-show-body__other__contents__view__product__box
-            = link_to image_tag(src = "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20120517%2F72%2F758062%2F11%2F300x413x2b9ed557aefe24201d12526e.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r", class: "product-show-body__other__contents__view__product__box__image") 
-            %p.text アンティキテラの機械
+            = link_to image_tag(@photos.first.name, size: '220x220', class: "product-show-body__other__contents__view__product__box__image")
+            %p.text #{@products.text}
             .product-show-body__other__contents__view__product__box__bottom
-              %p.price ¥12,000,000
+              %p.price ￥#{@products.price}
               .product-show-body__other__contents__view__product__box__bottom__good
                 = fa_icon "heart-o"
                 %p.value 7

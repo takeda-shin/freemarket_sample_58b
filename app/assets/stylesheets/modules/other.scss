@@ -1,14 +1,15 @@
 .product-show-body{
 
   &__other{
-    width: 625px;
+    width: 680px;
     margin: 0 auto;
 
     &__contents{
-
+      margin: 0 25px;
       &__title{
         text-align: center;
         margin: 30px auto 30px;
+        color: #09f;
 
         p{
           font-size: 32px;
@@ -20,6 +21,8 @@
           background-color: #eee;
           border-radius: 15px;
           padding: 5px;
+          text-decoration: none; 
+          color: #09f;
         }
 
       }
@@ -34,7 +37,7 @@
         }
 
         &__product{
-
+          
           &__title{
             margin-left: 20px;
           }
