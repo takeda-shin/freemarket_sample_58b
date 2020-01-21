@@ -159,6 +159,32 @@
           float: right;
           border: solid 1px lightgray;
         }
+        &__child-box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__grandchild-box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
         &__box__right {
           float: right;
           padding:0 0 0 330px;
