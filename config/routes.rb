@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :show, :edit]
 
   root to: 'exhibition#index'
-
+  resources :exhibition,only: [:index, :create]
   get 'users/identification' => 'users#identification'
 end
