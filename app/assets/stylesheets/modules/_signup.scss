@@ -161,6 +161,10 @@
         touch-action: manipulation;
         border: 1px solid $progress-bar-gray;
       }
+      &__use_limit {
+        float: left;
+        width: 105px;
+      }
       span {
         margin: 0px 2px;
         font-size: 14px;
