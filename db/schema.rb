@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_23_161053) do
+ActiveRecord::Schema.define(version: 2020_01_23_192127) do
 
   create_table "card_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "card_number", null: false
+    t.bigint "card_number", null: false
     t.integer "security_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
