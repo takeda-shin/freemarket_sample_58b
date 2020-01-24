@@ -1,6 +1,6 @@
 .signup-login-wrapper
 
-  = render partial: "signup-header"
+  = render partial: "signup-header-step1"
 
   .signup-main
     .signup-box
@@ -8,7 +8,7 @@
         %h2 会員情報入力
       .signup-box__form
         .signup-box__form__content
-          = form_for (""), html: { class: "field-wrapper" } do |f|
+          = form_for @user, url: step2_1_signup_index_path, method: :get, html: { class: "field-wrapper" } do |f|
             .field
               .field__label
                 = f.label :ニックネーム, class: 'field__label__title'
@@ -32,7 +32,7 @@
                 %li.field__input__error 7文字以上128文字以下で入力してください
                 %p.field__input__info ※英字と数字の両方を含めて設定してください
               .field__checkbox
-                = f.check_box :checkbox, class: 'field__checkbox__box'
+                = f.check_box :checkbox, class: 'field__checkbox__box',:as => :boolean,checked:false
                 = f.label :パスワードを表示する, class: 'field__checkbox__label'
             .field
               %h3.field__confirm 本人確認

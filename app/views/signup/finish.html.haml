@@ -7,7 +7,7 @@
       .signup-box__title
         %h2 会員登録完了
       .signup-box__form
-        = link_to "#", class: "signup-box__form__btn signup-box__form__start" do
+        = link_to root_path, method: :get, class: "signup-box__form__btn signup-box__form__start" do
           メルカリをはじめる
 
   = render partial: "common-footer" 

@@ -1,6 +1,6 @@
 .signup-login-wrapper
 
-  = render partial: "signup-header"
+  = render partial: "signup-header-step2"
 
   .signup-main
     .signup-box
@@ -8,7 +8,7 @@
         %h2 電話番号の確認
       .signup-box__form
         .signup-box__form__content
-          = form_for (""), html: { class: "field-wrapper" } do |f|
+          = form_for @user, url: step2_1_signup_index_path, method: :post, html: { class: "field-wrapper" } do |f|
             .field
               .field__label
                 = f.label :携帯電話の番号, class: 'field__label__title'
