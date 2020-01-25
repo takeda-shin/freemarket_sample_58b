@@ -10,7 +10,7 @@ class SignupController < ApplicationController
     @user.build_user_address
     @user.build_card_info
   end
-  #以下バリデーション
+
   def save_step1_to_session
 
     params[:user][:birthday] = birthday_join
@@ -25,7 +25,7 @@ class SignupController < ApplicationController
     @user.build_user_address
     @user.build_card_info
   end
-  #以下バリデーション
+
   def save_step2_1_to_session
     session[:phone_number] = user_params[:phone_number]
     session[:user_params_after_step2_1] = user_params
@@ -58,7 +58,7 @@ class SignupController < ApplicationController
     @user.build_user_address
     @user.build_card_info
   end
-  #以下バリデーション
+
   def save_step4_to_session
     session[:user_address_after_step4] = user_params[:card_info_attributes]
     @user = User.new
