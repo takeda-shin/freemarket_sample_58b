@@ -1,6 +1,6 @@
 .signup-login-wrapper
 
-  = render partial: "signup-header"
+  = render partial: "signup-header-step1"
 
   .signup-main
     .signup-box
@@ -8,31 +8,28 @@
         %h2 会員情報入力
       .signup-box__form
         .signup-box__form__content
-          = form_for (""), html: { class: "field-wrapper" } do |f|
+          = form_for @user, url: step2_1_signup_index_path, method: :get, html: { class: "field-wrapper" } do |f|
             .field
               .field__label
                 = f.label :ニックネーム, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.text_field :name, class: 'field__input__default',placeholder: "例）メルカリ太郎"
-                %li.field__input__error ニックネームを入力してください
+                = f.text_field :nickname, class: 'field__input__default',placeholder: "例）メルカリ太郎"
             .field
               .field__label
                 = f.label :メールアドレス, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.text_field :email, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
-                %li.field__input__error フォーマットが不適切です
+                = f.email_field :email, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
             .field
               .field__label
                 = f.label :パスワード, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.text_field :password, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
-                %li.field__input__error 7文字以上128文字以下で入力してください
+                = f.password_field :password, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
                 %p.field__input__info ※英字と数字の両方を含めて設定してください
               .field__checkbox
-                = f.check_box :checkbox, class: 'field__checkbox__box'
+                = f.check_box :checkbox, class: 'field__checkbox__box',:as => :boolean,checked:false
                 = f.label :パスワードを表示する, class: 'field__checkbox__label'
             .field
               %h3.field__confirm 本人確認
@@ -42,27 +39,21 @@
                 = f.label :"お名前(全角)", class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.text_field :name, class: 'field__input__half',placeholder: "例）山田"
-                = f.text_field :name, class: 'field__input__half',placeholder: "例）彩"
+                = f.text_field :family_name, class: 'field__input__half',placeholder: "例）山田"
+                = f.text_field :first_name, class: 'field__input__half',placeholder: "例）彩"
             .field
               .field__label
                 = f.label :"お名前カナ(全角)", class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.text_field :name, class: 'field__input__half',placeholder: "例）ヤマダ"
-                = f.text_field :name, class: 'field__input__half',placeholder: "例）アヤ"
+                = f.text_field :family_name_kana, class: 'field__input__half',placeholder: "例）ヤマダ"
+                = f.text_field :first_name_kana, class: 'field__input__half',placeholder: "例）アヤ"
             .field
               .field__label
                 = f.label :生年月日, class: 'field__label__title'
                 %span.field__label__require 必須
               .field__input
-                = f.select :year, [["--", "--"],[2019, 2019],[2018, 2018]], {}, class: 'field__input__select'
-                %span 年
-                = f.select :month, [["--", "--"],[1, 1],[2, 2]],{}, class: 'field__input__select'
-                %span 月
-                = f.select :date, [["--", "--"],[1, 1],[2, 2]],{}, class: 'field__input__select'
-                %span 日
-                %li.field__input__error 生年月日を入力してください
+                != sprintf(f.date_select(:birthday, prefix:'birthday', with_css_classes:'field__input__select', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
               %p.field__input__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             .field
               %p.field__info

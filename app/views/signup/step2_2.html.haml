@@ -1,6 +1,6 @@
 .signup-login-wrapper
 
-  = render partial: "signup-header"
+  = render partial: "signup-header-step2"
 
   .signup-main
     .signup-box
@@ -8,13 +8,12 @@
         %h2 電話番号の確認
       .signup-box__form
         .signup-box__form__content
-          = form_for (""), html: { class: "field-wrapper" } do |f|
+          = form_for @user, url: step3_signup_index_path, method: :post, html: { class: "field-wrapper" } do |f|
             .field
               .field__label
                 = f.label :認証番号, class: 'field__label__title'
               .field__input
-                = f.text_field :certification_number, class: 'field__input__default',placeholder: "認証番号の入力"
-                %li.field__input__error 認証番号を入力してください
+                = f.text_field :phone_number, class: 'field__input__default',placeholder: "認証番号の入力"
                 %p SMSで届いた認証番号を入力してください
               = f.submit "認証して完了", class: "submit-btn"
       .signup-box__form

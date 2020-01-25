@@ -152,6 +152,19 @@
         background-color: $white;
         touch-action: manipulation;
       }
+      &__select-prefecture {
+        height: 48px;
+        width: 343px;
+        padding: 0 10px;
+        cursor: pointer;
+        background-color: $white;
+        touch-action: manipulation;
+        border: 1px solid $progress-bar-gray;
+      }
+      &__use_limit {
+        float: left;
+        width: 105px;
+      }
       span {
         margin: 0px 2px;
         font-size: 14px;
@@ -252,4 +265,13 @@
   font-size: 14px;
   float: right;
   margin: 24px 0 0;
+}
+
+.year,.month,.day {
+  height: 48px;
+  width: 76px;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: $white;
+  touch-action: manipulation;
 }
