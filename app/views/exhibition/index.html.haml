@@ -1,0 +1,105 @@
+.sell-container
+  .sell-header
+    %h1
+      = link_to "", "https://www.mercari.com/jp/"
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3609274330",width:'185', height:'49'
+
+
+  .sell-body
+    .sell-body__top
+      商品の情報を入力
+    .product-image
+      .product-image__title 
+        出品画像
+        %span.product-image__require 必須
+        .product-image__detail
+          最大10枚までアップロードできます
+      .product-image__dropbox
+        ドラッグアンドドロップ　
+        %br 
+        またはクリックしてファイルをアップロード
+    .product-description
+      .product-name
+        .product-name__title
+          商品名
+          %span.product-name__require 必須
+        .product-name__box
+          商品名　(必須40文字まで)
+      .product-info
+        .product-info__title
+          商品の説明
+          %span.product-info__require 必須
+        .product-info__box
+          %p 商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+    .product-detail
+      .product-detail__title
+        商品の詳細
+      .product-category
+        カテゴリー
+        %span.product-category__require 必須
+      .product-category__box
+        %p ---
+        .product-category__box__right
+          ▽
+      .product-condition
+        商品の状態
+        %span.product-condition__require 必須
+      .product-condition__box
+        %p ---
+        .product-condition__box__right
+          ▽
+    .delivery
+      .delivery__title
+        配送について
+      .delivery-burden
+        配送料の負担
+        %span.delivery-burden__require 必須
+      .delivery-burden__box
+        %p ---
+        .delivery-burden__box__right
+          ▽
+      .delivery-area
+        発送元の地域
+        %span.delivery-area__require 必須
+      .delivery-area__box
+        %p ---
+        .delivery-area__box__right
+          ▽
+      .delivery-days
+        発送までの日数
+        %span.delivery-days__require 必須
+      .delivery-days__box
+        %p ---
+        .delivery-days__box__right
+          ▽
+    .sale
+      .sale__title
+        販売価格(300〜9,999,999)
+      .sale-price
+        価格
+        %span.sale-price__require 必須
+      .price-box
+        %p 　　　　例） 300
+      .sale-yen
+        ¥
+      .sale-commission
+        %p 販売手数料(10％)　　　　　　　　　　　　　　　　　　　　-
+      .sale-profit
+        %p 販売利益　　　　　　　　　　　　　　　　　　　　-
+    .exhibition
+      %p 禁止されている出品、行為を必ずご確認ください。
+      %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
+      %p り処罰される可能性があります。
+      %p また、出品をもちまして加盟店規約に同意したことになります。
+      .exhibition__button
+        %p 出品する
+      .exhibition__back__button
+        %p もどる
+  
+  .sell-footer
+    .sell-footer__policy
+      プライバシーポリシー　メルカリ利用規約　特定商取引に関する表記
+    .mercari-rogo
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3649802486",width:"80",height:"65"
+      .mercari-rogo__end
+        ©︎ Mercari, Inc.

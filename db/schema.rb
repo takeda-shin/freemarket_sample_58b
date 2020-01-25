@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_01_14_120236) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -28,6 +29,24 @@ ActiveRecord::Schema.define(version: 2020_01_14_120236) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+
+
+ActiveRecord::Schema.define(version: 2020_01_23_192127) do
+
+  create_table "card_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.bigint "card_number", null: false
+    t.integer "security_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "use_limit_month", null: false
+    t.integer "use_limit_year", null: false
+  end
+  
+ActiveRecord::Schema.define(version: 2020_01_04_114305) do
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", default: "abe", null: false
     t.text "text", null: false
     t.string "category_id", null: false
     t.integer "brand_id"
@@ -41,6 +60,19 @@ ActiveRecord::Schema.define(version: 2020_01_14_120236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "estimated_delivery"
+    t.string "image", default: "hoge.png"
+  end
+
+  create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "postal_code", null: false
+    t.integer "prefectures", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,13 +82,20 @@ ActiveRecord::Schema.define(version: 2020_01_14_120236) do
     t.string "first_name", null: false
     t.string "first_name_kana", null: false
     t.string "email", null: false
-    t.string "password", null: false
-    t.integer "birthday", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "phone_number"
     t.string "profile"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
+    t.date "birthday", null: false
 
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+    
   add_foreign_key "photos", "products"
+
 end
