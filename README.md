@@ -1,4 +1,4 @@
-# メルカリ　クローン DB設計
+# メルカリ クローン DB設計
 ## userテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -22,9 +22,9 @@
 ## user_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false|
+|user_id|integer|null :false|
 |postal_code|integer|null :false|
-|perfectures|string|null :false|
+|prefectures|integer|null :false|
 |city|string|null :false|
 |address|string|null :false|
 |building|string|null :false|
