@@ -1,0 +1,432 @@
+.sell-container {
+  background-color: $background-gray;
+  min-height: 2050px;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  .sell-header {
+    display: block;
+    height: 88px;
+    width: 100%;
+    padding-top: 40px;
+    text-align: center;
+  }
+
+  .sell-body {
+    background-color: white;
+    height: 2030px;
+    width: 700px;
+    margin:  0 auto;
+    &__top {
+      height: 97px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 97px;
+      text-align: center;
+      border-bottom: solid 1px $background-gray;
+    }
+
+    .product-image {
+      background-color: white;
+      float: left;
+      height: 263px;
+      padding-top: 40px;
+      padding-left: 40px;
+      border-bottom: solid 1px $background-gray;
+      &__title {
+        font-weight: bold;
+      }
+      &__require {
+        background-color: red;
+        color: white;
+        font-size: 12px;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+      }
+      &__detail {
+        font-size: 14px;
+        font-weight: normal;
+      }
+    
+      &__dropbox {
+        background-color: $background-gray;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 162px;
+        width: 618px;
+        margin-right: 40px;
+        float: right;
+        border: dashed 1px lightgray;
+      }
+    }
+
+    .product-description {
+      background-color: white;
+      float: left;
+      height: 325px;
+      border-bottom: solid 1px $background-gray;
+      .product-name {
+        &__title {
+          padding: 40px 0 0 40px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 600px;
+          padding-left: 16px;
+          margin: 0 40px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+      }
+
+      .product-info {
+        &__title {
+          padding: 80px 0 0 40px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          height: 120px;
+          min-width: 600px;
+          padding-left: 16px;
+          margin: 0 40px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+      }
+    }
+    .product-detail {
+      float: left;
+      height: 180px;
+      min-width: 620px;
+      padding: 40px;
+      font-size: 14px;
+      border-bottom: solid 1px $background-gray;
+      &__title {
+        float: left;
+        color: gray;
+      }
+      .product-category {
+        float: right;
+        padding: 0 280px 0 0px;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__box__right {
+          float: right;
+          padding:0 0 0 330px;
+        }
+      }
+      .product-condition {
+        float: right;
+        padding: 40px 280px 0 0px;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__box__right {
+          float: right;
+          padding:0 0 0 330px;
+        }
+      }
+    }
+    .delivery {
+      float: left;
+      height: 300px;
+      min-width: 620px;
+      padding: 40px;
+      font-size: 14px;
+      border-bottom: solid 1px $background-gray;
+      &__title {
+        float: left;
+        color: gray;
+      }
+      .delivery-burden {
+        float: right;
+        padding: 0 266px 0 0px;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__box__right {
+          float: right;
+          padding:0 0 0 330px;
+        }
+      }
+      .product-condition {
+        float: right;
+        padding: 40px 280px 0 0px;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__box__right {
+          float: right;
+          padding:0 0 0 330px;
+        }
+      }
+      .delivery-area {
+        float: right;
+        padding: 40px 267px 0 0px;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__box__right {
+          float: right;
+          padding:0 0 0 330px;
+        }
+      }
+      .delivery-days {
+        float: right;
+        padding: 40px 253px 0 0px;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+        }
+        &__box__right {
+          float: right;
+          padding:0 0 0 330px;
+        }
+      }
+        
+    }
+    .sale {
+      float: left;
+      height: 230px;
+      min-width: 620px;
+      padding: 40px;
+      font-size: 14px;
+      border-bottom: solid 1px $background-gray;
+      &__title {
+        float: left;
+        color: gray;
+      }
+      .sale-price {
+        float: right;
+        font-weight: bold;
+        padding: 14px 320px 0 0;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+      }
+      .price-box {
+        color: gray;
+        background-color: white;
+        font-size: 16px;
+        position: relative;
+        left: 390px;
+        bottom: 20px;
+        display: flex;
+        align-items: center;
+        height: 28px;
+        min-width: 120px;
+        padding: 10px 16px 8px;
+        float: right;
+        border: solid 1px lightgray;
+      }
+      .sale-yen {
+        position: relative;
+        font-size: 12px;
+        left: 275px;
+        top: 20px;
+      }
+      .sale-commission {
+        float: right;
+        border-top: solid 1px lightgray;
+        border-bottom: solid 1px lightgray;
+        padding: 24px 5px 24px 0px;
+      }
+      .sale-profit {
+        float: right;
+        padding: 24px 5px 24px 0px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+    }
+    .exhibition {
+      float: left;
+      height: 270px;
+      min-width: 620px;
+      padding: 40px;
+      font-size: 14px;
+      border-bottom: solid 1px $background-gray;
+      &__button {
+        margin: 40px 0;
+        height: 50px;
+        background-color: red;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      &__back__button {
+        height: 50px;
+        margin: 0 170px;
+        background-color: #aaaaaa;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+  .sell-footer {
+    padding: 40px 0;
+    height: 140px;
+    width: 456px;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    &__policy {
+    font-size: 12px;
+    }
+    .mercari-rogo {
+      padding: 40px 0;
+      align-items: center;
+      &__end {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
