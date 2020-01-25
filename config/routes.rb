@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :show, :edit]
 
   root to: 'products#index'
-  root to: 'exhibition#index'
+
+  resources :exhibition, only: [:index]
 
 end
