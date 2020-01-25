@@ -23,11 +23,10 @@
       %p >マイク
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key ブランド
-    .product-show-body__buy__top__status__box__value
-      = @brands.name
+    = render partial: 'products/layouts/item-details', locals: { name: @brand }
 
   .product-show-body__buy__top__status__box
-    .product-show-body__buy__top__status__box__key 商品の状態
+    .product-show-body__buy__top__status__box__key 商品のサイズ
     .product-show-body__buy__top__status__box__value 
       = @products.product_size    
 
