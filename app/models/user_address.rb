@@ -12,8 +12,10 @@ class UserAddress < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }
 
-  validates :postal_code, presence: true
-  validates :prefectures, presence: true
-  validates :city, presence: true
-  validates :address, presence: true
+  validates :postal_code, 
+            :prefectures,
+            :city,
+            :address,
+            presence: true
+            
 end
