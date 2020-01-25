@@ -14,7 +14,6 @@
                 = f.label :認証番号, class: 'field__label__title'
               .field__input
                 = f.text_field :phone_number, class: 'field__input__default',placeholder: "認証番号の入力"
-                %li.field__input__error 認証番号を入力してください
                 %p SMSで届いた認証番号を入力してください
               = f.submit "認証して完了", class: "submit-btn"
       .signup-box__form
