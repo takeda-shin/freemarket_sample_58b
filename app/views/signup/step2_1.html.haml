@@ -14,7 +14,6 @@
                 = f.label :携帯電話の番号, class: 'field__label__title'
               .field__input
                 = f.text_field :phone_number, class: 'field__input__default',placeholder: "携帯電話の番号"
-                %li.field__input__error 電話番号の入力が正しくありません
                 %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
               = f.submit "SMSを送信する", class: "submit-btn"
               %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
