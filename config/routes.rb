@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:index, :show]
-  resources :making, only: [:index]
+
+  
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   end
 
   get 'making/buy' => 'making#buy'
+
   resources :users, only: [:index, :new, :show, :edit]
 
   root to: 'products#index'
