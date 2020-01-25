@@ -39,26 +39,39 @@
         }
         &__box{
           width: 160px;
+          min-height: 220px;
           background-color: #FFF;
           border: 1px solid gray;
           margin: 10px;
 
           &__image{
-            width: 100%;
+            width: 160px;
+            height: 180px;
             border-bottom: 1px solid gray;
 
+            &__image-content{
+              height: 220px;
+              max-width: 160px;
+              object-fit: cover;
+              background-size: cover;
+
+            }
+
           }
-          .text{
-            height: 32px;
-            width: 100%;
+          &__text{
+            height: 40px;
+            width: 152px;
+            border-top: solid 1px #000;
+            background-color: #FFF;
             color: #000;
             font-weight: 100;
-            font-size: 14px;
+            font-size: 10px;
             text-align: left;
             padding: 4px;
+            position: relative;
           }
 
-          .value{
+          &__value{
             background-color: #666;
             opacity: 0.9;
             box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
@@ -69,7 +82,7 @@
             padding: 2px;
             position: relative;
             float: left;
-            bottom: 65px;
+            bottom: 70px;
           }
       } 
       }

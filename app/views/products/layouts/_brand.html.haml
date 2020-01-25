@@ -7,10 +7,13 @@
     %a ナイキ
   .body__contents__view
     - 4.times do |i|
-      %p.title 新着 スパイスカレー
-      - 5.times do |i|
+      %p.title 新着 声優
+      - @brands.each do |brand|
         .body__contents__view__product
           .body__contents__view__product__box
-            = image_tag src = "https://images-na.ssl-images-amazon.com/images/I/51aU1zvWu5L._SX351_BO1,204,203,200_.jpg", class: "body__contents__view__product__box__image"
-            %a.text 印度ｶﾘｰ子さんの本です
-            %a.value ¥1,430
+            .body__contents__view__product__box__image
+              = link_to image_tag(brand.image, class: "body__contents__view__product__box__image__image-content")
+            .body__contents__view__product__box__text
+              = brand.name
+            .body__contents__view__product__box__value
+              = "¥#{brand.price.to_s(:delimited, delimiter: ',')}"
