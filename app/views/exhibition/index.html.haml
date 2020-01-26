@@ -43,7 +43,6 @@
         .product-condition
           商品の状態
           %span.product-condition__require 必須
-        //= f.text_area :condition, placeholder: "---", class: "product-condition__box"
         = f.collection_select :product, @products, :condition, :conditon, {prompt: "--"},{class: "product-condition__box"}
 
       .delivery
