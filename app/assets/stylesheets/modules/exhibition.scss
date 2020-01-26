@@ -126,7 +126,7 @@
     }
     .product-detail {
       float: left;
-      height: 180px;
+      min-height: 180px;
       min-width: 620px;
       padding: 40px;
       font-size: 14px;
@@ -155,9 +155,11 @@
           align-items: center;
           height: 48px;
           min-width: 360px;
+          margin-bottom: 16px;
           padding: 0 16px;
           float: right;
           border: solid 1px lightgray;
+
         }
         &__child-box {
           color: gray;
@@ -168,6 +170,7 @@
           align-items: center;
           height: 48px;
           min-width: 360px;
+          margin-bottom: 16px;
           padding: 0 16px;
           float: right;
           border: solid 1px lightgray;
@@ -181,6 +184,7 @@
           align-items: center;
           height: 48px;
           min-width: 360px;
+          margin-bottom: 16px;
           padding: 0 16px;
           float: right;
           border: solid 1px lightgray;
@@ -188,6 +192,60 @@
         &__box__right {
           float: right;
           padding:0 0 0 330px;
+        }
+      }
+      .product-size{
+        margin-top: 32px;
+        float: right;
+        font-weight: bold;
+        &__require {
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          margin-bottom: 16px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+
+        }
+      }
+      .product-brand{
+        margin-top: 32px;
+        float: right;
+        font-weight: bold;
+        &__free {
+          background-color: gray;
+          color: white;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+        }
+        &__box {
+          color: gray;
+          background-color: white;
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          min-width: 360px;
+          margin-bottom: 16px;
+          padding: 0 16px;
+          float: right;
+          border: solid 1px lightgray;
+
         }
       }
       .product-condition {
@@ -360,7 +418,7 @@
         float: left;
         color: gray;
       }
-      .sale-price {
+      &__price {
         float: right;
         font-weight: bold;
         padding: 14px 320px 0 0;
@@ -393,13 +451,17 @@
         left: 275px;
         top: 20px;
       }
-      .sale-commission {
+      &__commission {
         float: right;
         border-top: solid 1px lightgray;
         border-bottom: solid 1px lightgray;
         padding: 24px 5px 24px 0px;
+        &__text{
+          text-align: right;
+
+        }
       }
-      .sale-profit {
+      &__profit {
         float: right;
         padding: 24px 5px 24px 0px;
         font-size: 16px;
@@ -415,6 +477,7 @@
       font-size: 14px;
       border-bottom: solid 1px $background-gray;
       &__button {
+        width: 620px;
         margin: 40px 0;
         height: 50px;
         background-color: red;

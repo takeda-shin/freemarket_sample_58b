@@ -97,3 +97,6 @@ gem 'erb2haml'
 gem 'font-awesome-sass'
 
 gem 'jquery-rails'
+gem 'dropzonejs-rails', '~> 0.7.3'
+
+gem 'pry-rails'
