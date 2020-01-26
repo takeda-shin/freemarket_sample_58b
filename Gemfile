@@ -96,6 +96,11 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-sass'
 
+gem 'jquery-rails'
+gem 'dropzonejs-rails', '~> 0.7.3'
+
+gem 'pry-rails'
+
 gem 'devise'
 gem 'pry-rails'
 
@@ -104,4 +109,3 @@ gem 'twilio-ruby', '~> 5.31.2'
 gem 'phony_rails'
 
 gem 'jquery-rails'
-

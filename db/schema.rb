@@ -10,8 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2020_01_26_070216) do
 
 ActiveRecord::Schema.define(version: 2020_01_14_120236) do
+
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -19,6 +21,12 @@ ActiveRecord::Schema.define(version: 2020_01_14_120236) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", default: "2020-01-01 00:00:00"
+    t.datetime "updated_at", default: "2020-01-01 00:00:00"
+  end
+  
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "product_id", null: false
@@ -26,9 +34,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_120236) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_photos_on_product_id"
   end
-
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
 
 
 ActiveRecord::Schema.define(version: 2020_01_23_192127) do
@@ -45,16 +50,25 @@ ActiveRecord::Schema.define(version: 2020_01_23_192127) do
   
 ActiveRecord::Schema.define(version: 2020_01_04_114305) do
 
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "abe", null: false
-    t.text "text", null: false
-    t.string "category_id", null: false
+    t.text "text"
+    t.string "category_id", default: ""
     t.integer "brand_id"
-    t.integer "price", null: false
+    t.integer "price"
     t.string "product_size"
-    t.string "condition", null: false
+    t.string "condition"
     t.string "shipping_charge"
     t.string "shipping_method"
+
+    t.string "delivery_area"
+    t.integer "user_id", default: 1
+    t.datetime "created_at", default: "2020-01-01 23:59:59"
+    t.datetime "updated_at", default: "2020-01-01 23:59:59", null: false
+    t.string "image", default: "hoge.png"
+  end
+
     t.string "delivery_area", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
