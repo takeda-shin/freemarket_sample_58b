@@ -53,7 +53,6 @@ $(function(){
       <div class = "contain">
       サイズ
       <span class="product-size__require">必須</span>
-      <form action = "/" accept-charset = "UTF-8" method = "POST" class = "product-size">
         <select class = "product-size__box" name = "product_size">
       </div>
       `
