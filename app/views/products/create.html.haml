@@ -61,18 +61,22 @@
           %span.delivery-days__require 必須
         = f.collection_select :shipping_method, @products, :shipping_method, :shipping_method, {prompt: "--"},{class: "delivery-days__box"}
       .sale
-        .sale__title
-          販売価格(300〜9,999,999)
-        .sale__price
-          価格
-          %span.sale__price__require 必須
-        = f.text_area :price, placeholder: "例） 300", class: "price-box"
-        .sale-yen
+        .sale__command
+          .sale__command__title
+            販売価格(300〜9,999,999)
           
-        .sale__commission
-          .sale__commission__text 販売手数料(10％)　　　　　　　　　　　　　　　　　　　　-
-        .sale__profit
-          .sale__profit__text 販売利益　　　　　　　　　　　　　　　　　　　　-
+        .sale__display
+          .sale__display__top
+            .sale__display__top__price
+              価格
+              %span.sale__display__top__price__require 必須
+            = f.text_area :price, placeholder: "例） 300", class: "price-box"
+          .sale__display__commission
+            .sale__display__commission__key 販売手数料(10％)
+            .sale__display__commission__text -
+          .sale__display__profit
+            .sale__display__profit__key 販売利益
+            .sale__display__profit__text -
       .exhibition
         %p 禁止されている出品、行為を必ずご確認ください。
         %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ

@@ -2,9 +2,9 @@ $(function(){
   $(".price-box").on("keyup",function(){
     var price = $(this).val();
     var fee = Math.floor(price * 0.1);
-  $(".sale__commission__text").text("販売手数料(10％)" + "¥ " + fee);
-    var profit = price - fee
-    $(".sale__profit__text").text("販売利益" + "¥ " + profit);
+  var profit = price - fee
+  $(".sale__display__commission__text").html("¥ " + fee);
+  $(".sale__display__profit__text").html("¥ " + profit);
     })
   
   
@@ -15,6 +15,7 @@ $(function(){
       <select class = "product-category__child-box" name = "child-category">
     `
     $(".product-childcategory").html(childForm);
+    $(".sell-body").css('height','2100');
 
     let childForm2 = `
     ${list.forEach(function(value){
@@ -32,6 +33,7 @@ $(function(){
         <select class = "product-category__grandchild-box"" name = "grandchild-category">
       `
     $(".product-grandchildcategory").html(grandchildForm);
+    $(".sell-body").css('height','2170');
 
     let grandchildForm2 = `
     ${list.forEach(function(value){
@@ -57,6 +59,7 @@ $(function(){
       `
       $(".product-size__contain").remove();
       $(".product-size").append(sizeForm);
+      $(".sell-body").css('height','2450');
 
       let sizeForm2 = `
       ${list.forEach(function(value){

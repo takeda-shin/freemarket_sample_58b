@@ -12,7 +12,7 @@
 
   .sell-body {
     background-color: white;
-    height: 2030px;
+    min-height: 2030px;
     width: 700px;
     margin:  0 auto;
     &__top {
@@ -414,59 +414,81 @@
       padding: 40px;
       font-size: 14px;
       border-bottom: solid 1px $background-gray;
-      &__title {
-        float: left;
-        color: gray;
-      }
-      &__price {
-        float: right;
-        font-weight: bold;
-        padding: 14px 320px 0 0;
-        &__require {
-          background-color: red;
-          color: white;
+      &__command{
+        &__title {
+          float: left;
+          color: gray;
+        }
+        
+        .sale-yen {
+          position: relative;
           font-size: 12px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
+          left: 275px;
+          top: 20px;
         }
-      }
-      .price-box {
-        color: gray;
-        background-color: white;
-        font-size: 16px;
-        position: relative;
-        left: 390px;
-        bottom: 20px;
-        display: flex;
-        align-items: center;
-        height: 28px;
-        min-width: 120px;
-        padding: 10px 16px 8px;
-        float: right;
-        border: solid 1px lightgray;
-      }
-      .sale-yen {
-        position: relative;
-        font-size: 12px;
-        left: 275px;
-        top: 20px;
-      }
-      &__commission {
-        float: right;
-        border-top: solid 1px lightgray;
-        border-bottom: solid 1px lightgray;
-        padding: 24px 5px 24px 0px;
-        &__text{
-          text-align: right;
 
+      }
+      
+      &__display{
+        width: 360px;
+        float:right;
+        &__top{
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          &__price {
+            display: flex;
+            font-weight: bold;
+            padding: 14px 0 0 0;
+            display: inline;
+            &__require {
+              background-color: red;
+              color: white;
+              font-size: 12px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+            }
+          }
+          .price-box {
+            color: gray;
+            background-color: white;
+            font-size: 16px;
+            left: 390px;
+            bottom: 20px;
+            align-items: center;
+            height: 18px;
+            min-width: 120px;
+            padding: 10px 16px 8px;
+            float: right;
+            border: solid 1px lightgray;
+          }
+        }
+        
+        &__commission {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          border-top: solid 1px lightgray;
+          border-bottom: solid 1px lightgray;
+          padding: 24px 5px 24px 0px;
+          text{
+            text-align: right;
+  
+          }
+        }
+        &__profit {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: solid 1px lightgray;
+          padding: 24px 5px 24px 0px;
+          text{
+            text-align: right;
+  
+          }
         }
       }
-      &__profit {
-        float: right;
-        padding: 24px 5px 24px 0px;
-        font-size: 16px;
-        font-weight: bold;
-      }
+      
       
     }
     .exhibition {
