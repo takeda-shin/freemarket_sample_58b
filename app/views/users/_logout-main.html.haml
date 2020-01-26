@@ -3,7 +3,6 @@
     %form
       .logout-content
         .logout-content__font
-          %button.logout-content__font--btn{type: "submit"} 
-            ログアウト
-            
-            
+          .logout-content__font__btn
+            = link_to destroy_user_session_path, :method => :delete, class: "logout-content__font__btn--text" do
+              ログアウト

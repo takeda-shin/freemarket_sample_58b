@@ -10,6 +10,7 @@
     line-height: 128px;
   }
 }
+
 .signup-header{
   height: 128px;
   width: 100%;
@@ -40,6 +41,9 @@
         color: $progress-bar-gray;
         position: relative;
         z-index: 40;
+        &--red {
+          color: red;
+        }
         &__status {
           position: absolute;
           height: 12px;
@@ -49,6 +53,9 @@
           background-color: $progress-bar-gray;
           left: 40%;
           z-index: 30;
+          &--red {
+            background-color: red;
+          }
         }
         &__bar {
           position: absolute;
@@ -67,6 +74,9 @@
             width: 100%;
             right: 100%;
             background-color: $progress-bar-gray;
+            &--red {
+              background-color: red;
+            }
           }
           &--after {
             display: inline-block;
@@ -74,6 +84,9 @@
             width: 100%;
             left: 50%;
             background-color: $progress-bar-gray;
+            &--red {
+              background-color: red;
+            }
           }
         }
       }
