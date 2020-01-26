@@ -11,9 +11,16 @@
       - @categorys.each do |category|
         .body__contents__view__product
           .body__contents__view__product__box
+
+            = link_to product_path(:id) do
+              = image_tag(src = "https://i.gyazo.com/e636e99ac0c0a823788221d5ceb3ba67.png", class: "body__contents__view__product__box__image") 
+              %a.text ダミーヘッドマイク
+              %a.value ¥1,000,000
+
             .body__contents__view__product__box__image
               = link_to image_tag(category.image, class: "body__contents__view__product__box__image__image-content")
             .body__contents__view__product__box__text
               = category.name
             .body__contents__view__product__box__value
               = "¥#{category.price.to_s(:delimited, delimiter: ',')}"
+

@@ -2,7 +2,9 @@
   .product-show-body__buy__top__status__boxs
     .product-show-body__buy__top__status__boxs__key 出品者
     .product-show-body__buy__top__status__boxs__value
-      %p.top 枝尾
+      %p
+      = link_to user_path(:id), class: "top" do
+        = @users.nickname
       .product-show-body__buy__top__status__boxs__value__down
         .product-show-body__buy__top__status__boxs__value__down__evalution
           = fa_icon 'smile-o', class: "good"
@@ -21,19 +23,34 @@
       %p >マイク
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key ブランド
-    .product-show-body__buy__top__status__box__value
+    = render partial: 'products/layouts/item-details', locals: { name: @brand }
+
+  .product-show-body__buy__top__status__box
+    .product-show-body__buy__top__status__box__key 商品のサイズ
+    .product-show-body__buy__top__status__box__value 
+      = @products.product_size    
+
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 商品の状態
-    .product-show-body__buy__top__status__box__value 新品、未使用
+    .product-show-body__buy__top__status__box__value 
+      = @products.condition
+
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 配送料の負担
-    .product-show-body__buy__top__status__box__value 送料込み（出品者負担）
+    .product-show-body__buy__top__status__box__value 
+      = @products.shipping_charge
+
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 配送の方法
-    .product-show-body__buy__top__status__box__value 投げつける
+    .product-show-body__buy__top__status__box__value 
+      = @products.shipping_method
+
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 配送元地域
-    .product-show-body__buy__top__status__box__value-area 福岡
+    .product-show-body__buy__top__status__box__value
+      = @products.delivery_area 
+      
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 発送日の目安
-    .product-show-body__buy__top__status__box__value 翌日
+    .product-show-body__buy__top__status__box__value
+      = @products.estimated_delivery
