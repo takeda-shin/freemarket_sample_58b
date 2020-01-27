@@ -10,33 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_070216) do
-
-ActiveRecord::Schema.define(version: 2020_01_14_120236) do
-
+ActiveRecord::Schema.define(version: 2020_01_26_164012) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", default: "2020-01-01 00:00:00"
-    t.datetime "updated_at", default: "2020-01-01 00:00:00"
-  end
-  
-  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.bigint "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_photos_on_product_id"
-  end
-
-
-ActiveRecord::Schema.define(version: 2020_01_23_192127) do
 
   create_table "card_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -47,34 +27,36 @@ ActiveRecord::Schema.define(version: 2020_01_23_192127) do
     t.integer "use_limit_month", null: false
     t.integer "use_limit_year", null: false
   end
-  
-ActiveRecord::Schema.define(version: 2020_01_04_114305) do
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_photos_on_product_id"
+  end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "abe", null: false
-    t.text "text"
-    t.string "category_id", default: ""
+    t.text "text", null: false
+    t.string "category_id", null: false
     t.integer "brand_id"
-    t.integer "price"
+    t.integer "price", null: false
     t.string "product_size"
-    t.string "condition"
+    t.string "condition", null: false
     t.string "shipping_charge"
     t.string "shipping_method"
-
-    t.string "delivery_area"
-    t.integer "user_id", default: 1
-    t.datetime "created_at", default: "2020-01-01 23:59:59"
-    t.datetime "updated_at", default: "2020-01-01 23:59:59", null: false
-    t.string "image", default: "hoge.png"
-  end
-
     t.string "delivery_area", null: false
     t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", default: "2020-01-01 23:59:59", null: false
+    t.datetime "updated_at", default: "2020-01-01 23:59:59", null: false
     t.string "estimated_delivery"
-    t.string "image", default: "hoge.png"
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,7 +68,6 @@ ActiveRecord::Schema.define(version: 2020_01_04_114305) do
     t.string "building"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,20 +77,16 @@ ActiveRecord::Schema.define(version: 2020_01_04_114305) do
     t.string "first_name", null: false
     t.string "first_name_kana", null: false
     t.string "email", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.date "birthday", null: false
     t.string "phone_number"
     t.string "profile"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "birthday", null: false
-
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-    
-  add_foreign_key "photos", "products"
 
+  add_foreign_key "photos", "products"
 end
