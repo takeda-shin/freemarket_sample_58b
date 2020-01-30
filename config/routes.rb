@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'category/category_list'
   devise_for :users, controllers: {
     registrations: 'signup',
     sessions: 'users/sessions'
@@ -23,12 +24,9 @@ Rails.application.routes.draw do
       get 'finish' #登録完了ページ
     end
   end
-  resources :products, only: [:index, :show, :create]
-  resources :making, only: [:index]
 
   resources :products, only: [:index, :show]
-
-  
+  resources :making, only: [:index]
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'
@@ -36,12 +34,10 @@ Rails.application.routes.draw do
   end
 
   get 'making/buy' => 'making#buy'
-
   resources :users, only: [:index, :new, :show, :edit]
 
   root to: 'products#index'
-
+  resources :category, only: [:category_list]
   resources :exhibition, only: [:index]
-
 
 end

@@ -1,0 +1,23 @@
+.category-body {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: #eee;
+  float: left;
+  width: 100%;
+  .category-list-top {
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    width: 700px;
+    margin:  0 auto;
+    text-align: left;
+  }
+  .toy-hobby-goods {
+    background-color: red;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    width: 700px;
+    margin:  0 auto;
+    text-align: left;
+  }
+}

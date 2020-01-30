@@ -15,8 +15,8 @@
         %ul.header-left__menu
           %li                
             = fa_icon "list-ul", class: "header-left__menu--icon"
-            = link_to "","https://www.mercari.com/jp/category/", class: "header-left__menu--btn"
-            %span カテゴリーから探す
+            = link_to category_category_list_path, method: :get, class: "header-left__menu__category" do
+              カテゴリーから探す
         %ul.header-left__menu
           %li           
             = fa_icon "tags", class: "header-left__menu--icon"
