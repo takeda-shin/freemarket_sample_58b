@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get 'finish' #登録完了ページ
     end
   end
-  resources :products, only: [:index, :show, :new, :create]
+  resources :products
   resources :making, only: [:index]
 
   
