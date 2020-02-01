@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   belongs_to :brand
 
   belongs_to :user
-  has_many :photos
+  has_many :photos,:foreign_key => 'product_id',dependent: :destroy
 
 
   validates :name, presence: true
