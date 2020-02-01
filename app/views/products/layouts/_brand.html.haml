@@ -7,12 +7,15 @@
     %a ナイキ
   .body__contents__view
     - 4.times do |i|
-      %p.title 新着 声優
+      %p.title 新着 アイドル
       - @brands.each do |brand|
         .body__contents__view__product
           .body__contents__view__product__box
             .body__contents__view__product__box__image
-              = link_to image_tag(brand.image, class: "body__contents__view__product__box__image__image-content")
+              - @photos.each do |photo|
+                - if brand.id == photo.product_id
+                  = link_to image_tag(photo.name, class: "body__contents__view__product__box__image__image-content")
+                  - break
             .body__contents__view__product__box__text
               = brand.name
             .body__contents__view__product__box__value
