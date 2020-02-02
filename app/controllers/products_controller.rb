@@ -27,7 +27,19 @@ class ProductsController < ApplicationController
     @product.save
     @photo.save
     redirect_to action: :index
-    
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+    @product.photos.build
+    @products = Product.all
+    @categories = Category.all
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params)
+    redirect_to action: :index
   end
 
   private
