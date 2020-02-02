@@ -25,9 +25,12 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @photo = @product.photos.build(photo_params)
     @photo.product_id = @product.id
-    @product.save
-    @photo.save
-    redirect_to action: :index
+    if @product.save && @photo.save
+      redirect_to action: :index, notice: '商品情報を編集しました'
+    else
+      flash[:alert] = '編集に失敗しました。必須項目を確認してください。'
+      redirect_to edit_products_path
+    end
   end
 
   def edit
