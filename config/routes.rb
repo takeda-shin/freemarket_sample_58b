@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
   end
   resources :products
+  post 'products/new' => 'products#new'
   resources :making, only: [:index]
 
   
