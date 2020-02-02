@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+
+  before_action :set_product, only: [:edit, :update, :show]
   
   def index
     @categories  = Product.all.order("rand()").limit(5)
@@ -7,7 +9,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.find(params[:id])
     @brands = Brand.find(params[:id])
     @users = User.find(params[:id])
     @photos = Photo.where(product_id: params[:id])
@@ -30,19 +31,21 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @product.photos.build
     @products = Product.all
     @categories = Category.all
   end
 
   def update
-    product = Product.find(params[:id])
     product.update(product_params)
     redirect_to action: :index
   end
 
   private
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
   def product_params
     params.require(:product).permit(:name, :text, :category_id, :brand_id, :condition, :product_size, :shipping_charge, :shipping_method, :delivery_area, :price)  
   end
