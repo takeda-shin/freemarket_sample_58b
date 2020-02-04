@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
 
   validates :name,
-            :image,
             :text, 
             :category_id,
             :condition, 
@@ -15,10 +14,6 @@ class Product < ApplicationRecord
   belongs_to :brand
 
   belongs_to :user
-  has_many :photos
-
-
-  validates :name, presence: true
-  validates :image, presence: true
+  has_many :photos,:foreign_key => 'product_id',dependent: :destroy
 
 end

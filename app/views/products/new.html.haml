@@ -4,7 +4,7 @@
       = link_to "", "https://www.mercari.com/jp/"
       = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3609274330",width:'185', height:'49'
   .sell-body
-    .image
+    
     = form_with model: @product, local: true do |f|
       .sell-body__top
         商品の情報を入力
@@ -14,12 +14,9 @@
           %span.product-image__require 必須
           .product-image__detail
             最大10枚までアップロードできます
+          .image
           = f.text_area :image_url, placeholder: "ドラッグアンドドロップ", class: "product-image__dropbox"
-          .product-image__detail
-        .product-image__dropbox
-          ドラッグアンドドロップ　
-          %br 
-          またはクリックしてファイルをアップロード
+          
       .product-description
         .product-name
           .product-name__title
@@ -37,13 +34,15 @@
         .product-category
           カテゴリー
           %span.product-category__require 必須
-        = f.collection_select :product, @products, :name, :name, {prompt: "--"},{class: "product-category__box"}
+        = f.collection_select :category_id, @categories, :id, :name, {prompt: "--"},{class: "product-category__box"}
         .product-childcategory
         .product-grandchildcategory
+        .product-size
+        .product-brand
         .product-condition
           商品の状態
           %span.product-condition__require 必須
-        = f.collection_select :product, @products, :condition, :conditon, {prompt: "--"},{class: "product-condition__box"}
+        = f.collection_select :condition, @products, :condition, :condition, {prompt: "--"},{class: "product-condition__box"}
 
       .delivery
         .delivery__title
@@ -51,30 +50,33 @@
         .delivery-burden
           配送料の負担
           %span.delivery-burden__require 必須
-        = f.text_area :condition, placeholder: "--", class: "delivery-burden__box"
-          
+        = f.collection_select :shipping_charge, @products, :shipping_charge, :shipping_charge, {prompt: "--"},{class: "delivery-burden__box"}
         .delivery-area
           発送元の地域
           %span.delivery-area__require 必須
-        = f.text_area :condition, placeholder: "--", class: "delivery-area__box"
+        = f.collection_select :delivery_area, @products, :delivery_area, :delivery_area, {prompt: "--"},{class: "delivery-area__box"}
         
         .delivery-days
           発送までの日数
           %span.delivery-days__require 必須
-        = f.text_area :condition, placeholder: "--", class: "delivery-days__box"
+        = f.collection_select :shipping_method, @products, :shipping_method, :shipping_method, {prompt: "--"},{class: "delivery-days__box"}
       .sale
-        .sale__title
-          販売価格(300〜9,999,999)
-        .sale__price
-          価格
-          %span.sale__price__require 必須
-        = f.text_area :condition, placeholder: "例） 300", class: "price-box"
-        .sale-yen
+        .sale__command
+          .sale__command__title
+            販売価格(300〜9,999,999)
           
-        .sale__commission
-          .sale__commission__text 販売手数料(10％)　　　　　　　　　　　　　　　　　　　　-
-        .sale__profit
-          .sale__profit__text 販売利益　　　　　　　　　　　　　　　　　　　　-
+        .sale__display
+          .sale__display__top
+            .sale__display__top__price
+              価格
+              %span.sale__display__top__price__require 必須
+            = f.text_area :price, placeholder: "例） 300", class: "price-box"
+          .sale__display__commission
+            .sale__display__commission__key 販売手数料(10％)
+            .sale__display__commission__text -
+          .sale__display__profit
+            .sale__display__profit__key 販売利益
+            .sale__display__profit__text -
       .exhibition
         %p 禁止されている出品、行為を必ずご確認ください。
         %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
