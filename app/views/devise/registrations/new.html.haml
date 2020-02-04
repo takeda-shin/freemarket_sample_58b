@@ -48,7 +48,8 @@
             .field
               %p.field__info
                 「次へ進む」のボタンを押すことにより、
-                %a{ :href => '#' } 利用規約
+                = link_to "#" do
+                  利用規約
                 に同意したものとみなします
             = f.submit "次へ進む", class: "submit-btn"
             %a.guide-link{ :href => '#' } 本人情報の登録について〉
@@ -56,9 +57,11 @@
               .field__temp-text
                 %p
                   This site is protected by reCAPTCHA and the Google
-                  %a{ :href => '#' } Privacy Policy
+                  = link_to "#" do
+                    Privacy Policy
                   and
-                  %a{ :href => '#' } Terms of Service
+                  = link_to "#" do
+                    Terms of Service
                   apply.
 
   = render partial: "signup/common-footer"
