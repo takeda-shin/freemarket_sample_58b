@@ -1,11 +1,11 @@
 .header
   = render 'shared/header'
-  - breadcrumb :category_list
-  = breadcrumbs pretext: "カテゴリ一覧", separator: " &rsaquo; "
-
   
 .body
   .category-body
+    .bread-crumbs
+      - breadcrumb :category_category_list
+      = breadcrumbs pretext: "", separator: " &rsaquo; "
     .category-list-top
       カテゴリー一覧
     .toy-hobby-goods
@@ -13,7 +13,8 @@
     .toy-hobby-goods__all
       すべて
       .toy-hobby-goods__character
-        キャラクターグッズ
+        = link_to category_character_goods_path, method: :get, class: "toy-hobby-goods__character__btn" do
+          キャラクターグッズ
 .footer
   = render 'shared/footer'
 

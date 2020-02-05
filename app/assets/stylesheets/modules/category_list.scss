@@ -4,6 +4,16 @@
   float: left;
   width: 100%;
 
+  .bread-crumbs {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 14px;
+    width: 100%;
+    padding: 16px 0 16px 35px;
+    margin-left: 0;
+    border-top: solid 1px #eee;
+    
+  }
   .category-list-top {
     display: block;
     font-weight: bold;

@@ -2,9 +2,14 @@ crumb :root do
   link "メルカリ", root_path
 end
 
-crumb :category_list do
-  link "カテゴリ", category_list_path
+crumb :category_category_list do
+  link "カテゴリ", category_category_list_path
   parent :root
+end
+
+crumb :category_character_goods do
+  link "キャラクターグッズ", category_character_goods_path
+  parent :category_category_list
 end
 
 # crumb :projects do

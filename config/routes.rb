@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'category/category_list'
+  get 'category/character-goods'
   devise_for :users, controllers: {
     registrations: 'signup',
     sessions: 'users/sessions'
