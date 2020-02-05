@@ -1,0 +1,27 @@
+.character-goods-body {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: #eee;
+  float: left;
+  height: 700px;
+  width: 100%;
+
+  .bread-crumbs {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 14px;
+    width: 100%;
+    padding: 16px 0 16px 35px;
+    margin-left: 0;
+    border-top: solid 1px #eee;
+  }
+
+  .character-goods-products {
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    width: 700px;
+    margin:  0 auto;
+    text-align: left;
+    padding: 24px 0 8px 0;
+  }
+}
