@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_120018) do
+
+ActiveRecord::Schema.define(version: 2020_02_01_081726) do
+
+ActiveRecord::Schema.define(version: 2020_02_01_091725) do
+
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -35,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_120018) do
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "image_url"
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +62,15 @@ ActiveRecord::Schema.define(version: 2020_01_29_120018) do
     t.datetime "updated_at", default: "2020-01-01 23:59:59", null: false
     t.string "estimated_delivery"
     t.string "image", default: "hoge.png"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,4 +103,5 @@ ActiveRecord::Schema.define(version: 2020_01_29_120018) do
   end
 
   add_foreign_key "photos", "products"
+  add_foreign_key "sns_credentials", "users"
 end
