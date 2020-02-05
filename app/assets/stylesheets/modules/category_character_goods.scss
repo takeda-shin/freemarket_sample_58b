@@ -4,6 +4,10 @@
   float: left;
   height: 700px;
   width: 100%;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   .bread-crumbs {
     display: inline-block;

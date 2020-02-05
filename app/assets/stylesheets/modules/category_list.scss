@@ -12,7 +12,10 @@
     padding: 16px 0 16px 35px;
     margin-left: 0;
     border-top: solid 1px #eee;
-    
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
   .category-list-top {
     display: block;
@@ -40,6 +43,10 @@
       max-width: 640px;
       margin:  0 auto;
       padding: 24px 30px 10px 30px;
+      a {
+        text-decoration: none;
+        color: #0099E8;
+      }
     }
     &__character {
       padding-top: 30px;
