@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'category/character-goods'
   devise_for :users, controllers: {
     registrations: 'signup',
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
+  
 
   devise_scope :user do
     get "sign_in", :to => "users/sessions#new"
@@ -25,9 +27,14 @@ Rails.application.routes.draw do
       get 'finish' #登録完了ページ
     end
   end
-
+  
   resources :products, only: [:index, :show, :create]
   resources :making, only: [:index]
+  resources :products
+  post 'products/new' => 'products#new'
+  resources :making, only: [:index]
+
+  
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'

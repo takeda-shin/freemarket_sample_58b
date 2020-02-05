@@ -5,7 +5,7 @@
     .product-show-body__other__contents__view__product
       - @photos.each do |photo|
         .product-show-body__other__contents__view__product__box
-          = link_to image_tag(photo.name, size: '220x220', class: "product-show-body__other__contents__view__product__box__image")
+          = link_to image_tag(photo.image_url, size: '220x220', class: "product-show-body__other__contents__view__product__box__image")
           %p.text ALTER EGO【豪華盤】
           .product-show-body__other__contents__view__product__box__bottom
             %p.price ¥3,301
