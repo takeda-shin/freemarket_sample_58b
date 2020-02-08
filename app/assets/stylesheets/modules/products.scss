@@ -28,6 +28,7 @@
           &__image{
             height: 300px;
             width: 300px;
+            position: relative;
           }
 
         }
@@ -147,6 +148,23 @@
 
     &__btn{
       background-color: #f00;
+      height: 64px;
+      width: 600px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 64px;
+      &__link {
+        color:$white;
+        text-decoration: none;
+        display: inline-block;
+        height: 64px;
+        width: 600px;
+      }
+    }
+    &__error-btn {
+      background-color: $gray;
       height: 64px;
       width: 600px;
       font-size: 24px;

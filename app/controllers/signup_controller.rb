@@ -1,9 +1,13 @@
 class SignupController < ApplicationController
 
+  require 'payjp'
+
   before_action :save_step1_to_session, only: :step2_1
   before_action :save_step2_1_to_session, only: :sms_post
   before_action :save_step3_to_session, only: :step4
   before_action :save_step4_to_session, only: :create
+  #クレジットカード登録
+  before_action :card_info_to_payjp, only: :create
 
   def step1
     @user = User.new
@@ -69,7 +73,7 @@ class SignupController < ApplicationController
   def create
     @user = User.new(session[:user_params_after_step2_1])
     @user.build_user_address(session[:user_address_after_step3])
-    @user.build_card_info(user_params[:card_info_attributes])
+    @user.build_card_info(session[:payjp])
 
     if @user.save
       session[:id] = @user.id
@@ -114,6 +118,25 @@ class SignupController < ApplicationController
     end
   end
 
+  #クレジットカード登録
+  def card_info_to_payjp
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    token = Payjp::Token.create({
+      card: {
+        number: session[:user_address_after_step4]["card_number"],
+        cvc: session[:user_address_after_step4]["security_code"],
+        exp_month: session[:user_address_after_step4]["use_limit_month"],
+        exp_year: session[:user_address_after_step4]["use_limit_year"]
+      }},
+      {
+        'X-Payjp-Direct-Token-Generate': 'true'
+      } 
+    )
+    customer = Payjp::Customer.create(card: token.id)
+    session[:payjp] = {customer_id: customer.id, card_id: customer.default_card}
+
+  end
+
   private
 
     def user_params
@@ -141,7 +164,9 @@ class SignupController < ApplicationController
           :card_number,
           :use_limit_month,
           :use_limit_year,
-          :security_code
+          :security_code,
+          :customer_id,
+          :card_id
         ]
       )
     end

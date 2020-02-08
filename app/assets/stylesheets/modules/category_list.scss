@@ -1,0 +1,56 @@
+.category-body {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: #eee;
+  float: left;
+  width: 100%;
+
+  .bread-crumbs {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 14px;
+    width: 100%;
+    padding: 16px 0 16px 35px;
+    margin-left: 0;
+    border-top: solid 1px #eee;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .category-list-top {
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    width: 700px;
+    margin:  0 auto;
+    text-align: left;
+  }
+  .toy-hobby-goods {
+    background-color: red;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    max-width: 670px;
+    margin:  0 auto;
+    text-align: left;
+    padding-left: 30px;
+  
+    &__all {
+      display: block;
+      background-color: white;
+      color: #0099E8;
+      font-size: 16px;
+      max-width: 640px;
+      margin:  0 auto;
+      padding: 24px 30px 10px 30px;
+      a {
+        text-decoration: none;
+        color: #0099E8;
+      }
+    }
+    &__character {
+      padding-top: 30px;
+
+    }
+  }
+}

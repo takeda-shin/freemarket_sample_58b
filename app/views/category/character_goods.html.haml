@@ -1,0 +1,16 @@
+.header
+  = render 'shared/header'
+  
+.body
+  .character-goods-body
+    .bread-crumbs
+      - breadcrumb :category_character_goods
+      = breadcrumbs pretext: "", separator: " &rsaquo; "
+    .character-goods-products
+      キャラクターグッズの商品一覧
+      
+.footer
+  = render 'shared/footer'
+
+.exhibit 
+  = render 'shared/exhibit'
