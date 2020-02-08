@@ -14,7 +14,7 @@
             .body__contents__view__product__box__image
               - @photos.each do |photo|
                 - if category.id == photo.product_id
-                  = link_to image_tag(photo.image_url, class: "body__contents__view__product__box__image__image-content")
+                  = link_to image_tag(photo.image_url, class: "body__contents__view__product__box__image__image-content"),category
                   - break
                   
             .body__contents__view__product__box__text

@@ -42,7 +42,7 @@
         .product-condition
           商品の状態
           %span.product-condition__require 必須
-        = f.collection_select :condition, @products, :condition, :condition, {prompt: "--"},{class: "product-condition__box"}
+        = f.collection_select :condition, @conditions, :condition, :condition, {prompt: "--"},{class: "product-condition__box"}
 
       .delivery
         .delivery__title
@@ -50,16 +50,16 @@
         .delivery-burden
           配送料の負担
           %span.delivery-burden__require 必須
-        = f.collection_select :shipping_charge, @products, :shipping_charge, :shipping_charge, {prompt: "--"},{class: "delivery-burden__box"}
+        = f.collection_select :shipping_charge, @shipping_charges, :shipping_charge, :shipping_charge, {prompt: "--"},{class: "delivery-burden__box"}
         .delivery-area
           発送元の地域
           %span.delivery-area__require 必須
-        = f.collection_select :delivery_area, @products, :delivery_area, :delivery_area, {prompt: "--"},{class: "delivery-area__box"}
+        = f.collection_select :delivery_area, @delivery_areas, :delivery_method, :delivery_method, {prompt: "--"},{class: "delivery-area__box"}
         
         .delivery-days
           発送までの日数
           %span.delivery-days__require 必須
-        = f.collection_select :shipping_method, @products, :shipping_method, :shipping_method, {prompt: "--"},{class: "delivery-days__box"}
+        = f.collection_select :shipping_method, @shipping_methods, :shipping_method, :shipping_method, {prompt: "--"},{class: "delivery-days__box"}
       .sale
         .sale__command
           .sale__command__title

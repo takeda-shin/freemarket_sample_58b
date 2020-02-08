@@ -3,20 +3,20 @@
 .product-show-body
   .product-show-body__buy
     .product-show-body__buy__title 
-      = @products.name
+      = @product.name
     .product-show-body__buy__top
       = render 'products/layouts/photo'
       = render 'products/layouts/status'
     .product-show-body__buy__price
       %a.value 
-        %p ￥#{@products.price}
+        %p ￥#{@product.price}
       .product-show-body__buy__price__describe
         %p.tax (税込）
         %p.text 送料込み
     .product-show-body__buy__btn
       購入画面に進む
     .product-show-body__buy__description
-      = @products.text
+      = @product.text
     .product-show-body__buy__comment
       .product-show-body__buy__comment__left
         .product-show-body__buy__comment__left__text

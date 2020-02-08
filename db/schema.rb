@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_091725) do
+ActiveRecord::Schema.define(version: 2020_02_04_121959) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -34,11 +34,23 @@ ActiveRecord::Schema.define(version: 2020_02_01_091725) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image_url"
-    t.bigint "product_id", null: false
+  create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "delivery_method"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_url"
+    t.bigint "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["product_id"], name: "index_photos_on_product_id"
   end
 
@@ -53,11 +65,23 @@ ActiveRecord::Schema.define(version: 2020_02_01_091725) do
     t.string "shipping_charge"
     t.string "shipping_method"
     t.string "delivery_area", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", default: "2020-01-01 23:59:59", null: false
     t.datetime "updated_at", default: "2020-01-01 23:59:59", null: false
     t.string "estimated_delivery"
     t.string "image", default: "hoge.png"
+  end
+
+  create_table "shipping_charges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shipping_charge"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shipping_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shipping_method"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
