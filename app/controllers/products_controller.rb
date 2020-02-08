@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+
   before_action :set_product, only: [:edit, :update, :show, :details]
   
   def index
@@ -9,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new
@@ -17,6 +18,10 @@ class ProductsController < ApplicationController
     @product.photos.build
     @products = Product.all
     @categories = Category.all
+    @conditions = Condition.all
+    @shipping_charges = ShippingCharge.all
+    @delivery_areas = DeliveryArea.all
+    @shipping_methods = ShippingMethod.all
   end
 
   def create
@@ -27,7 +32,7 @@ class ProductsController < ApplicationController
       redirect_to action: :index, notice: '商品情報を編集しました'
     else
       flash[:alert] = '編集に失敗しました。必須項目を確認してください。'
-      redirect_to edit_products_path
+      redirect_to root_path
     end
   end
 
@@ -35,10 +40,14 @@ class ProductsController < ApplicationController
     @product.photos.build
     @products = Product.all
     @categories = Category.all
+    @conditions = Condition.all
+    @shipping_charges = ShippingCharge.all
+    @delivery_areas = DeliveryArea.all
+    @shipping_methods = ShippingMethod.all
   end
 
   def update
-    product.update(product_params)
+    @product.update(product_params)
     redirect_to action: :index
   end
 
@@ -61,7 +70,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :text, :category_id, :brand_id, :condition, :product_size, :shipping_charge, :shipping_method, :delivery_area, :price)  
+    params.require(:product).permit(:name, :text, :category_id, :brand_id, :condition,:shipping_charge, :product_size, :shipping_method, :delivery_area, :price)
   end
 
   def photo_params
