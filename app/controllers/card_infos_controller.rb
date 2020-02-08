@@ -11,7 +11,6 @@ class CardInfosController < ApplicationController
   def show
     #商品情報表示
     @brand = Brand.find(params[:id])
-    @users = current_user
     @addresses = current_user.user_address
 
     #カード情報を取得
