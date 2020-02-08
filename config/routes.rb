@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'posts/search'
   get 'category/category_list'
   get 'category/character-goods'
   devise_for :users, controllers: {
