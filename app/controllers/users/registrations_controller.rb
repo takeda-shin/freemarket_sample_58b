@@ -1,4 +1,4 @@
-# # frozen_string_literal: true
+# frozen_string_literal: true
 
 # class Users::RegistrationsController < Devise::RegistrationsController
 #   password = Devise.friendly_token.first(7)
