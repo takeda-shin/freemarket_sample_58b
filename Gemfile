@@ -103,6 +103,10 @@ gem 'twilio-ruby', '~> 5.31.2'
 gem 'phony_rails'
 
 gem 'jquery-rails'
+
+#クレジットカード購入
+gem 'payjp'
+
 gem 'gretel'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
