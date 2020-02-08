@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 
-  before_action :set_product, only: [:edit, :update, :show, :details]
+  before_action :set_product, only: [:edit, :update, :show, :destroy, :details]
   
   def index
     @categories  = Product.all.order("rand()").limit(5)
@@ -56,8 +56,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    if product.destroy
+    if @product.destroy
        redirect_to root_path
 
     else
