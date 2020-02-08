@@ -53,7 +53,7 @@ $(function(){
       <div class = "contain">
       サイズ
       <span class="product-size__require">必須</span>
-        <select class = "product-size__box" name = "product_size">
+        <select class = "product-size__box" name = "product[product_size]">
       </div>
       `
       $(".product-size__contain").remove();

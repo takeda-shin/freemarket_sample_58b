@@ -9,10 +9,14 @@
   position: fixed;
   right: 40px;
   bottom: 40px;
+  text-decoration: none;
   p{
+    color: #FFF;
     margin-top: 32px;
+    border-bottom: none;
   }
   &__camera{
+    color: #FFF;
     font-size: 54px;
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
