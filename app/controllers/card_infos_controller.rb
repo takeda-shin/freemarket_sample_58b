@@ -1,45 +1,44 @@
 class CardInfosController < ApplicationController
 
   require 'payjp'
+
+  before_action :set_product, only: [:show, :purchase]
+  before_action :set_card, only: [:show, :purchase]
+
   
 
   #購入確認画面
   def show
     #商品情報表示
-    @products = Product.find(params[:id])
     @brands = Brand.find(params[:id])
-    @photos = Photo.where(product_id: params[:id])
-    @users = User.find(current_user.id)
-    @addresses = UserAddress.where(user_id: current_user.id)
+    @users = current_user
+    @addresses = current_user.user_address
 
     #カード情報を取得
-    card = CardInfo.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "user", action: "edit"
     else
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   #カードの情報をpayjpに送り決済する
   def purchase
-    card = CardInfo.where(user_id: current_user.id).first
-    @product = Product.where(params[:id]).first
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     begin
     Payjp::Charge.create(
-      amount: @product.price,
-      customer: card.customer_id,
+      amount: @products.price,
+      customer: @card.customer_id,
       currency: 'jpy'
     )
     rescue
       redirect_to action: 'show'
       return false
     end
-      if @product.update(status: 1, buyer_id: current_user.id)
+      if @products.update(status: 1, buyer_id: current_user.id)
         redirect_to done_card_info_path
       else
         redirect_to card_info_path
@@ -50,6 +49,14 @@ class CardInfosController < ApplicationController
   end
 
   private
+
+  def set_product
+    @products = Product.find(params[:id])
+  end
+
+  def set_card
+    @card = CardInfo.where(user_id: current_user.id).first
+  end
   
   def purchase_params
     params.permit(

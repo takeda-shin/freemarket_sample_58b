@@ -8,7 +8,7 @@
         %h2 購入内容の確認
       .purchase-box__content
         .purchase-box__content__item-box
-          = image_tag (@photos.first.name), class: "purchase-box__content__item-box__image"
+          = image_tag (@products.photos.first.name), class: "purchase-box__content__item-box__image"
           .purchase-box__content__item-box__detail
             .purchase-box__content__item-box__detail__name
               %span #{@products.name}
@@ -64,9 +64,9 @@
               = link_to "#" do
                 変更する
             .purchase-box__content__inner__user__address
-              %span 〒#{@addresses[0]["postal_code"]}
+              %span 〒#{@addresses[:postal_code]}
               %br
-              %span #{@addresses[0]["prefectures"]+@addresses[0]["city"]+ @addresses[0]["address"]+ @addresses[0]["building"]}
+              %span #{@addresses[:prefectures]+@addresses[:city]+ @addresses[:address]+ @addresses[:building]}
               %br
               %span #{@users.family_name+@users.first_name}
 
