@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_02_07_185320) do
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "image_url"
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 2020_02_07_185320) do
     t.string "image", default: "hoge.png"
     t.integer "status"
     t.integer "buyer_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,4 +105,5 @@ ActiveRecord::Schema.define(version: 2020_02_07_185320) do
   end
 
   add_foreign_key "photos", "products"
+  add_foreign_key "sns_credentials", "users"
 end
