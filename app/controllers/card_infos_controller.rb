@@ -10,7 +10,7 @@ class CardInfosController < ApplicationController
   #購入確認画面
   def show
     #商品情報表示
-    @brands = Brand.find(params[:id])
+    @brand = Brand.find(params[:id])
     @users = current_user
     @addresses = current_user.user_address
 
@@ -30,7 +30,7 @@ class CardInfosController < ApplicationController
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     begin
     Payjp::Charge.create(
-      amount: @products.price,
+      amount: @product.price,
       customer: @card.customer_id,
       currency: 'jpy'
     )
@@ -38,7 +38,7 @@ class CardInfosController < ApplicationController
       redirect_to action: 'show'
       return false
     end
-      if @products.update(status: 1, buyer_id: current_user.id)
+      if @product.update(status: 1, buyer_id: current_user.id)
         redirect_to done_card_info_path
       else
         redirect_to card_info_path
@@ -51,11 +51,11 @@ class CardInfosController < ApplicationController
   private
 
   def set_product
-    @products = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def set_card
-    @card = CardInfo.where(user_id: current_user.id).first
+    @card = CardInfo.find_by(user_id: current_user.id)
   end
   
   def purchase_params
