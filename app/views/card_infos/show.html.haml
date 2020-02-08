@@ -1,0 +1,76 @@
+.purchase-wrapper
+
+  = render partial: "signup/common-header"
+
+  .purchase-main
+    .purchase-box
+      .purchase-box__title
+        %h2 購入内容の確認
+      .purchase-box__content
+        .purchase-box__content__item-box
+          = image_tag (@photos.first.name), class: "purchase-box__content__item-box__image"
+          .purchase-box__content__item-box__detail
+            .purchase-box__content__item-box__detail__name
+              %span #{@products.name}
+            .purchase-box__content__item-box__detail__price
+              %span.purchase-box__content__item-box__detail__price__sell.clearfix ¥#{@products.price}
+              %span.purchase-box__content__item-box__detail__price__shipping-fee.clearfix （税込）送料込み
+      .purchase-box__content
+        .purchase-box__content__inner
+          .purchase-box__content__inner__price
+            .purchase-box__content__inner__price__label
+              %span 支払い金額
+            .purchase-box__content__inner__price__sell
+              %span ¥#{@products.price}
+          .purchase-box__content__inner__checkbox
+            %br
+            %input{type:"checkbox", value:"1"}/
+            %label{for:"status_all"} ポイントを使用 (所持ポイント: P180)
+          %br
+          .purchase-box__content__inner__user
+            .purchase-box__content__inner__user__method
+              %h3 支払い方法
+              = link_to "#" do
+                変更する
+            .purchase-box__content__inner__user__card-info
+              - if @default_card_information.blank?
+                %br /
+              - else
+                %p クレジットカード
+                = "**** **** **** " + @default_card_information.last4
+                %br
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+                %br
+            .purchase-box__content__inner__user__card-logo
+              - if @default_card_information.brand == "Visa"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+              - elsif @default_card_information.brand == "MasterCard"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+              - elsif @default_card_information.brand == "SaizonCard"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+              - elsif @default_card_information.brand == "JCB"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+              - elsif @default_card_information.brand == "American Express"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+              - elsif @default_card_information.brand == "Diners Club"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+              - elsif @default_card_information.brand == "Discover"
+                = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1215422380", class: 'purchase-box__content__inner__user__card-logo__image'
+          .purchase-box__content__inner__user
+            .purchase-box__content__inner__user__method
+              %h3 配送方法
+              = link_to "#" do
+                変更する
+            .purchase-box__content__inner__user__address
+              %span 〒#{@addresses[0]["postal_code"]}
+              %br
+              %span #{@addresses[0]["prefectures"]+@addresses[0]["city"]+ @addresses[0]["address"]+ @addresses[0]["building"]}
+              %br
+              %span #{@users.family_name+@users.first_name}
+
+          = form_tag purchase_card_info_path(params[:id]), method: :post do
+            %button.purchase-box__content__inner__btn 購入する
+  
+  = render partial: "signup/common-footer"
