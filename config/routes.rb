@@ -27,20 +27,16 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :products, only: [:index, :show, :create]
-  resources :making, only: [:index]
+  resources :products, only: [:index, :show, :create, :new]
   resources :products
   post 'products/new' => 'products#new'
-  resources :making, only: [:index]
 
-  
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'
     end
   end
 
-  get 'making/buy' => 'making#buy'
   resources :users, only: [:index, :new, :show, :edit]
 
   root to: 'products#index'
