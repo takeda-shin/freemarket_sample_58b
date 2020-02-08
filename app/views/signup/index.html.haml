@@ -10,10 +10,10 @@
         = link_to "step1", class: "signup-box__form__btn signup-box__form__mail" do
           = fa_icon "envelope", class: "signup-box__form__btn__icon"
           メールアドレスで登録する
-        = link_to "#", class: "signup-box__form__btn signup-box__form__facebook" do
+        = link_to user_facebook_omniauth_authorize_path, class: "signup-box__form__btn signup-box__form__facebook" do
           = fa_icon "facebook-square", class: "signup-box__form__btn__icon"
           Facebookで登録する
-        = link_to "#", class: "signup-box__form__btn signup-box__form__google" do
+        = link_to user_google_oauth2_omniauth_authorize_path, class: "signup-box__form__btn signup-box__form__google" do
           = fa_icon "google", class: "signup-box__form__btn__icon"
           googleで登録する
 
