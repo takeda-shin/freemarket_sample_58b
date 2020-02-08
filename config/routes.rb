@@ -31,6 +31,12 @@ Rails.application.routes.draw do
   resources :products
   post 'products/new' => 'products#new'
 
+  resources :products, only: [:index, :new, :create, :update, :show, :destroy] do
+    member do
+      get 'details'
+    end
+  end
+
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'

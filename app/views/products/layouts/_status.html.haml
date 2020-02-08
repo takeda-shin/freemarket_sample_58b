@@ -4,7 +4,7 @@
     .product-show-body__buy__top__status__boxs__value
       %p
       = link_to user_path(:id), class: "top" do
-        = @users.nickname
+        = @user.nickname
       .product-show-body__buy__top__status__boxs__value__down
         .product-show-body__buy__top__status__boxs__value__down__evalution
           = fa_icon 'smile-o', class: "good"
@@ -28,8 +28,7 @@
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 商品のサイズ
     .product-show-body__buy__top__status__box__value 
-
-      = @product.product_size
+      = @product.product_size    
 
 
   .product-show-body__buy__top__status__box
