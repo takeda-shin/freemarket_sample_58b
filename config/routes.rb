@@ -25,11 +25,13 @@ Rails.application.routes.draw do
       get 'finish' #登録完了ページ
     end
   end
-  resources :products
-  post 'products/new' => 'products#new'
-  resources :making, only: [:index]
-
-  
+  resources :products do
+    member do
+      get 'details'
+    post 'products/new' => 'products#new'
+    resources :making, only: [:index]
+    end
+  end
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'

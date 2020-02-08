@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
     @brands = Brand.find(params[:id])
     @users = User.find(params[:id])
     @photos = Photo.where(product_id: params[:id])
+    @products = Product.find(params[:id])
   end
 
   def new
@@ -42,6 +43,19 @@ class ProductsController < ApplicationController
   def update
     product.update(product_params)
     redirect_to action: :index
+  end
+
+  def details
+    @brands = Brand.find(params[:id])
+    @users = User.find(params[:id])
+    @photos = Photo.where(product_id: params[:id])
+    @products = Product.find(params[:id])
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to root_path
   end
 
   private
