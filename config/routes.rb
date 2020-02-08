@@ -44,4 +44,13 @@ Rails.application.routes.draw do
   resources :exhibition, only: [:index]
 
 
+  resources :card_infos do
+    member do
+      get 'show', to: 'card_infos#show'
+      post 'purchase', to: 'card_infos#purchase'
+      get 'done', to: 'card_infos#done'
+    end
+  end
+
+
 end
