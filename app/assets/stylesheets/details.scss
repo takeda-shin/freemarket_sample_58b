@@ -1,0 +1,31 @@
+.details-content{
+  height: 300px;
+  width: 640px;
+  text-align: center;
+  margin: 30px 380px;
+  padding: 24px 20px;
+  background-color: white;
+  .details-box{
+    height: 70px;
+    line-height: 70px;
+    background-color: red;
+    color: white;
+  }
+  &__which{
+    height: 70px;
+    line-height: 70px;
+  }
+  p{
+    height: 70px;
+    line-height: 70px;
+  }
+  .delete{
+    margin-top: 24px;
+    background-color: gray;
+    a{
+      display: inline;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

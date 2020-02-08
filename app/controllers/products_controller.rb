@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show, :edit, :update, :show]
+
+  before_action :set_product, only: [:edit, :update, :show, :destroy, :details]
   
   def index
     @categories  = Product.all.order("rand()").limit(5)
@@ -9,10 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @brands = Brand.find(1)
-    #@users = User.find(params[:id])
-    @users = User.find(1)
-    @photos = Photo.where(product_id: params[:id])
+
   end
 
   def new
@@ -53,9 +51,25 @@ class ProductsController < ApplicationController
     redirect_to action: :index
   end
 
+  def details
+    
+  end
+
+  def destroy
+    if @product.destroy
+       redirect_to root_path
+
+    else
+      redirect_to action: "detsils"
+    end
+  end
+
   private
   def set_product
     @product = Product.find(params[:id])
+    @brand = Brand.find(params[:id])
+    @user = User.find(params[:id])
+    @photos = Photo.where(product_id: params[:id])
   end
 
   def product_params
