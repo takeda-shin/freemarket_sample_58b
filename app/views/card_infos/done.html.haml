@@ -1,0 +1,13 @@
+.signup-login-wrapper
+
+  = render partial: "signup/common-header"
+
+  .signup-main
+    .signup-box
+      .signup-box__title
+        %h2 購入完了
+      .signup-box__form
+        = link_to root_path, method: :get, class: "signup-box__form__btn signup-box__form__start" do
+          トップページに戻る
+
+  = render partial: "signup/common-footer" 

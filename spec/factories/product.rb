@@ -12,6 +12,9 @@ FactoryBot.define do
     delivery_area {"abe"}
     user_id {0}
     image {"hoge.png"}
+    status {0}
+    buyer_id {0}
+
     created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     updated_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
   end

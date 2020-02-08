@@ -13,8 +13,13 @@
       .product-show-body__buy__price__describe
         %p.tax (税込）
         %p.text 送料込み
-    .product-show-body__buy__btn
-      購入画面に進む
+    - if @product.status == 1
+      .product-show-body__buy__error-btn
+        売り切れました
+    - else
+      .product-show-body__buy__btn
+        = link_to card_info_path(params[:id]), method: :get, class: "product-show-body__buy__btn__link" do
+          購入画面に進む
     .product-show-body__buy__description
       = @product.text
     .product-show-body__buy__comment
