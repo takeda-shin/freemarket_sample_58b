@@ -1,15 +1,15 @@
 .product-show-body__other__contents
   .product-show-body__other__contents__title
     = link_to users_path(:id) do
-      %p #{@users.nickname}さんのその他の出品
+      %p #{@user.nickname}さんのその他の出品
   .product-show-body__other__contents__view
     .product-show-body__other__contents__view__product
       - @photos.each do |photo|
         .product-show-body__other__contents__view__product__box
           = link_to image_tag(photo.image_url, size: '220x220', class: "product-show-body__other__contents__view__product__box__image")
-          %p.text #{@products.text}
+          %p.text #{@product.text}
           .product-show-body__other__contents__view__product__box__bottom
-            %p.price ￥#{@products.price}
+            %p.price ￥#{@product.price}
             .product-show-body__other__contents__view__product__box__bottom__good
               = fa_icon "heart-o"
               %p.value 7

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:edit, :update, :show]
+  before_action :set_product, only: [:edit, :update, :show, :details]
   
   def index
     @categories  = Product.all.order("rand()").limit(5)
@@ -9,10 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @brands = Brand.find(params[:id])
-    @users = User.find(params[:id])
-    @photos = Photo.where(product_id: params[:id])
-    @products = Product.find(params[:id])
+    
   end
 
   def new
@@ -46,10 +43,7 @@ class ProductsController < ApplicationController
   end
 
   def details
-    @brands = Brand.find(params[:id])
-    @users = User.find(params[:id])
-    @photos = Photo.where(product_id: params[:id])
-    @products = Product.find(params[:id])
+    
   end
 
   def destroy
@@ -61,6 +55,9 @@ class ProductsController < ApplicationController
   private
   def set_product
     @product = Product.find(params[:id])
+    @brand = Brand.find(params[:id])
+    @user = User.find(params[:id])
+    @photos = Photo.where(product_id: params[:id])
   end
 
   def product_params
