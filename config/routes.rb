@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'posts/search'
   get 'category/category_list'
   get 'category/character-goods'
   devise_for :users, controllers: {
@@ -48,5 +47,6 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :category, only: [:category_list]
   resources :exhibition, only: [:index]
+  get '/search' => 'posts#search'
 
 end
