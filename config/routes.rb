@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :category, only: [:category_list]
   resources :exhibition, only: [:index]
+  get '/search' => 'posts#search'
 
   resources :card_infos do
     member do
