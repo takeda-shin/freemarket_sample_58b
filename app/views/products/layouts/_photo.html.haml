@@ -1,5 +1,11 @@
 .product-show-body__buy__top__photo
   .product-show-body__buy__top__photo__view
+  - if @product.status == 1
+    .product-show-body__buy__top__photo__view__soldout
+      %p.product-show-body__buy__top__photo__view__soldout__text
+        SOLD
+    = image_tag (@photos.first.image_url), class: "product-show-body__buy__top__photo__view__image"
+  - else
     = image_tag (@photos.first.image_url), class: "product-show-body__buy__top__photo__view__image"
   .product-show-body__buy__top__photo__select
     - @photos.each do |photo|
