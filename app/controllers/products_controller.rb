@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :show, :destroy, :details]
   
   def index
-    @categories  = Product.all.order("rand()").limit(5)
-    @brands      = Product.all.order("rand()").limit(5)
+    @categories  = Product.all.limit(5)
+    @brands      = Product.all.limit(5)
     @photos      = Photo.all
   end
 
