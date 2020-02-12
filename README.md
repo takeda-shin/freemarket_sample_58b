@@ -92,7 +92,7 @@
 ### Association
 - belongs_to :product,optional: true, :dependent => :destroy
 
-## commentsテーブル
+## commentsテーブル(現在未実装)
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
