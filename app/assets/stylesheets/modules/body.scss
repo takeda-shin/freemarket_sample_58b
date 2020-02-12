@@ -57,6 +57,26 @@
 
             }
 
+            &__soldout{
+              display: block;
+              position: absolute;
+              border-top: 50px solid $submit-red;
+              border-left: 50px solid $submit-red;
+              border-right: 50px solid transparent;
+              border-bottom: 50px solid transparent;
+              
+              &__text{
+                position: absolute;
+                top: -35px;
+                left: -55px;
+                font-size: 24px;
+                font-weight: bold;
+                transform:rotate(-45deg);
+                color: $white;
+                background-color: $transmission; 
+              }
+            }
+
           }
           &__text{
             height: 40px;
