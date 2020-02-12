@@ -10,6 +10,17 @@
   right: 40px;
   bottom: 40px;
   text-decoration: none;
+  &__link{
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: $transmission;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 100;
+  }
   p{
     color: #FFF;
     margin-top: 32px;
