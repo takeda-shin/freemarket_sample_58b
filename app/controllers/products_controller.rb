@@ -66,10 +66,12 @@ class ProductsController < ApplicationController
 
   private
   def set_product
+    brand_id = Product.find(params[:id]).brand_id
+    user_id  = Product.find(params[:id]).user_id
     @product = Product.find(params[:id])
-    @brand = Brand.find(params[:id])
-    @user = User.find(params[:id])
-    @photos = Photo.where(product_id: params[:id])
+    @brand   = Brand.find(brand_id)
+    @user    = User.find(user_id)
+    @photos  = Photo.where(product_id: params[:id])
   end
 
   def product_params
