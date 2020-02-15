@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
     user_id  = Product.find(params[:id]).user_id
     @product = Product.find(params[:id])
     @brand   = Brand.find(brand_id)
-    @user    = User.find(current_user.id)
+    @user    = User.find(user_id)
     @photos  = Photo.where(product_id: params[:id])
   end
 
