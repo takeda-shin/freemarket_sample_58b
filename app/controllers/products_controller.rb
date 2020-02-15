@@ -60,15 +60,15 @@ class ProductsController < ApplicationController
        redirect_to root_path
 
     else
-      redirect_to action: "detsils"
+      redirect_to action: "details"
     end
   end
 
   private
   def set_product
     @product = Product.find(params[:id])
-    @brand = Brand.find(params[:id])
-    @user = User.find(params[:id])
+    # @brand = Brand.find(params[:id])
+    # @user = User.find(params[:id])
     @photos = Photo.where(product_id: params[:id])
   end
 
