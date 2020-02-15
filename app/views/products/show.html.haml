@@ -19,8 +19,12 @@
         売り切れました
     - else
       .product-show-body__buy__btn
-        = link_to card_info_path(params[:id]), method: :get, class: "product-show-body__buy__btn__link" do
-          購入画面に進む
+        - if user_signed_in?
+          = link_to card_info_path(params[:id]), method: :get, class: "product-show-body__buy__btn__link" do
+            購入画面に進む
+        - else
+          = link_to new_user_session_path, method: :get, class: "product-show-body__buy__btn__link" do
+            購入画面に進む
     .product-show-body__buy__description
       = @product.text
     .product-show-body__buy__comment

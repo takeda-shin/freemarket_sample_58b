@@ -26,14 +26,11 @@ Rails.application.routes.draw do
       get 'finish' #登録完了ページ
     end
   end
-  
-  resources :products, only: [:index, :show, :create, :new]
-  resources :products
-  post 'products/new' => 'products#new'
 
   resources :products, only: [:index, :new, :create, :update, :show, :destroy] do
     member do
       get 'details'
+      post 'products/new' => 'products#new'
     end
   end
 
@@ -43,11 +40,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :new, :show, :edit]
-
   root to: 'products#index'
   resources :category, only: [:category_list]
   resources :exhibition, only: [:index]
+  get '/search' => 'posts#search'
 
   resources :card_infos do
     member do

@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :show, :destroy, :details]
   
   def index
-    @categories  = Product.all.order("rand()").limit(5)
-    @brands      = Product.all.order("rand()").limit(5)
+    @categories  = Product.all.limit(5)
+    @brands      = Product.all.limit(5)
     @photos      = Photo.all
   end
 
@@ -66,14 +66,21 @@ class ProductsController < ApplicationController
 
   private
   def set_product
+    brand_id = Product.find(params[:id]).brand_id
+    user_id  = Product.find(params[:id]).user_id
     @product = Product.find(params[:id])
-    # @brand = Brand.find(params[:id])
-    # @user = User.find(params[:id])
-    @photos = Photo.where(product_id: params[:id])
+    @brand   = Brand.find(brand_id)
+    @user    = User.find(current_user.id)
+    @photos  = Photo.where(product_id: params[:id])
   end
 
   def product_params
-    params.require(:product).permit(:name, :text, :category_id, :brand_id, :condition,:shipping_charge, :product_size, :shipping_method, :delivery_area, :price)
+    if user_signed_in?
+      @user_id = current_user.id
+    else
+      @user_id = 1
+    end
+    params.require(:product).permit(:name, :text, :category_id, :brand_id, :condition,:shipping_charge, :product_size, :shipping_method, :delivery_area, :price).merge(user_id: @user_id)
   end
 
   def photo_params

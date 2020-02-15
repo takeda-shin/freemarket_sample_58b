@@ -28,13 +28,30 @@
         background-color: #eee;
 
         &__view{
-
+          position: relative;
           &__image{
             height: 300px;
             width: 300px;
-            position: relative;
           }
-
+          &__soldout{
+            display: block;
+            position: absolute;
+            border-top: 60px solid $submit-red;
+            border-left: 60px solid $submit-red;
+            border-right: 60px solid transparent;
+            border-bottom: 60px solid transparent;
+            
+            &__text{
+              position: absolute;
+              top: -40px;
+              left: -58px;
+              font-size: 24px;
+              font-weight: bold;
+              transform:rotate(-45deg);
+              color: $white;
+              background-color: $transmission; 
+            }
+          }
         }
         &__select{
           display: flex;
