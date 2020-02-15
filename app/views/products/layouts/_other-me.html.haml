@@ -1,7 +1,7 @@
 .product-show-body__other__contents
   .product-show-body__other__contents__title
     = link_to users_path(:id) do
-      %p #{@user.nickname}さんのその他の出品
+      %p #{@product.user.nickname}さんのその他の出品
   .product-show-body__other__contents__view
     .product-show-body__other__contents__view__product
       - @photos.each do |photo|

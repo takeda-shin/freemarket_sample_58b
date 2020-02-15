@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
        redirect_to root_path
 
     else
-      redirect_to action: "detsils"
+      redirect_to action: "details"
     end
   end
 
