@@ -1,3 +1,7 @@
+- flash.each do |key, value|
+  = content_tag(:div, value, class: "#{key}")
+
+
 .signup-login-wrapper
 
   = render partial: "signup-header-step2"

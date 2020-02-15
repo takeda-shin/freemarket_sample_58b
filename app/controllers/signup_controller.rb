@@ -86,26 +86,17 @@ class SignupController < ApplicationController
   def finish
     sign_in User.find(session[:id]) unless user_signed_in?
   end
-  
-  # SMS認証
+
+  #payjpアカウント停止中の一時的処理
   def sms_post
     @user = User.new
-    phone_number_original = user_params[:phone_number]
-    phone_number = PhonyRails.normalize_number phone_number_original, country_code:'JP'
-    sms_number = rand(100000..999999)
-    session[:sms_number] = sms_number
-    client = Twilio::REST::Client.new
-    begin
-      result = client.messages.create(
-        from: Rails.application.credentials.twilio[:TWILIO_PHONE_NUMBER],
-        to:   phone_number,
-        body: "認証番号：#{session[:sms_number]} この番号を認証画面に入力してください。"
-      )
-    rescue
-      render "signup/step2_1"
-      return false
+    @sms_number = rand(100000..999999)
+    session[:sms_number] = @sms_number
+    if session[:phone_number].present?
+      redirect_to step2_2_signup_index_path, notice: "#{@sms_number}を入力してください"
+    else
+      redirect_to step2_1_signup_index_path, alert: "正しい電話番号を入力してください"
     end
-    redirect_to step2_2_signup_index_path
   end
 
   def sms_check
@@ -117,6 +108,37 @@ class SignupController < ApplicationController
       render "signup/step2_2"
     end
   end
+
+  # # SMS認証(payjpアカウント停止により上記の一時処理を使用する)
+  # def sms_post
+  #   @user = User.new
+  #   phone_number_original = user_params[:phone_number]
+  #   phone_number = phone_number_original.sub(/\A./,'+81')
+  #   sms_number = rand(100000..999999)
+  #   session[:sms_number] = sms_number
+  #   client = Twilio::REST::Client.new
+  #   begin
+  #     result = client.messages.create(
+  #       from: Rails.application.credentials.twilio[:TWILIO_PHONE_NUMBER],
+  #       to:   phone_number,
+  #       body: "認証番号：#{session[:sms_number]} この番号を認証画面に入力してください。"
+  #     )
+  #   rescue
+  #     render "signup/step2_1"
+  #     return false
+  #   end
+  #   redirect_to step2_2_signup_index_path
+  # end
+
+  # def sms_check
+  #   @user = User.new
+  #   sms_number = user_params[:phone_number]
+  #   if sms_number.to_i == session[:sms_number]
+  #     redirect_to step3_signup_index_path
+  #   else
+  #     render "signup/step2_2"
+  #   end
+  # end
 
   #クレジットカード登録
   def card_info_to_payjp
