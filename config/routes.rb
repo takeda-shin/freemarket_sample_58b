@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'products/:id' => 'products#show'
+
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
       get 'identification'
