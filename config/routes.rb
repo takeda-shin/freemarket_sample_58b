@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products do
+  resources :products, only: [:index, :new, :create, :update, :show, :destroy] do
     member do
       get 'details'
       post 'products/new' => 'products#new'
