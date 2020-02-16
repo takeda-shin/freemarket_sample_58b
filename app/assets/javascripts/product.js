@@ -72,7 +72,7 @@ $(function(){
       ブランド
       <span class="product-brand__free">任意</span>
       <form action = "/" accept-charset = "UTF-8" method = "POST" class = "product-size">
-        <select class = "product-brand__box" name = "brand">
+        <select class = "product-brand__box" name = "product[brand_id]">
       </div>
       `
       $(".product-brand__contain").remove();
