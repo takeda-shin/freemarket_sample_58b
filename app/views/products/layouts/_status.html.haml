@@ -23,7 +23,8 @@
       %p >マイク
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key ブランド
-    = render partial: 'products/layouts/item-details', locals: { name: @brand }
+    = @brand.name
+    //= render partial: 'products/layouts/item-details', locals: { name: brand_id }
 
   .product-show-body__buy__top__status__box
     .product-show-body__buy__top__status__box__key 商品のサイズ
