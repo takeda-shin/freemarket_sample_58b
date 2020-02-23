@@ -19,7 +19,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else 
       @sns = info[:sns]
-      render template: "devise/registrations/new" 
+      session[:password_confirmation] = SecureRandom.alphanumeric(30)
+      # render template: "devise/registrations/new" 
+      if SnsCredential.find_by(uid: info[:sns][:uid], provider: info[:sns][:provider]).nil?
+        #ユーザ登録と同時にsns_credentialも登録するために
+        session[:uid] = info[:sns][:uid]
+        session[:provider] = info[:sns][:provider]
+      end
+      #登録フォームのviewにリダイレクトさせる
+      render template: "signup/step1" 
+
     end
   end
 
