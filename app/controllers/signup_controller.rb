@@ -2,12 +2,17 @@ class SignupController < ApplicationController
 
   require 'payjp'
 
+  
   before_action :save_step1_to_session, only: :step2_1
   before_action :save_step2_1_to_session, only: :sms_post
   before_action :save_step3_to_session, only: :step4
   before_action :save_step4_to_session, only: :create
   #クレジットカード登録
   before_action :card_info_to_payjp, only: :create
+
+  def index
+    session.clear
+  end
 
   def step1
     @user = User.new
@@ -76,6 +81,11 @@ class SignupController < ApplicationController
     @user.build_card_info(session[:payjp])
 
     if @user.save
+      SnsCredential.create(  #ユーザ登録と同時にこっちも登録
+        uid: session[:uid],
+        provider: session[:provider],
+        user_id: @user.id
+      )  
       session[:id] = @user.id
       redirect_to finish_signup_index_path
     else

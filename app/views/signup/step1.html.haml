@@ -1,6 +1,6 @@
 .signup-login-wrapper
 
-  = render partial: "signup-header-step1"
+  = render partial: "signup/signup-header-step1"
 
   .signup-main
     .signup-box
@@ -21,16 +21,21 @@
                 %span.field__label__require 必須
               .field__input
                 = f.email_field :email, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
-            .field
-              .field__label
-                = f.label :パスワード, class: 'field__label__title'
-                %span.field__label__require 必須
-              .field__input
-                = f.password_field :password, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
-                %p.field__input__info ※英字と数字の両方を含めて設定してください
-              .field__checkbox
-                = f.check_box :checkbox, class: 'field__checkbox__box',:as => :boolean,checked:false
-                = f.label :パスワードを表示する, class: 'field__checkbox__label'
+            - if session[:password_confirmation].present?
+              .field
+                .field__input
+                  = f.password_field :password, type: :hidden, class: 'field__input__default',placeholder: "PC・携帯どちらでも可", value: "#{session[:password_confirmation]}"
+            - else
+              .field
+                .field__label
+                  = f.label :パスワード, class: 'field__label__title'
+                  %span.field__label__require 必須
+                .field__input
+                  = f.password_field :password, class: 'field__input__default',placeholder: "PC・携帯どちらでも可"
+                  %p.field__input__info ※英字と数字の両方を含めて設定してください
+                .field__checkbox
+                  = f.check_box :checkbox, class: 'field__checkbox__box',:as => :boolean,checked:false
+                  = f.label :パスワードを表示する, class: 'field__checkbox__label'
             .field
               %h3.field__confirm 本人確認
               %p.field__confirm-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -71,4 +76,4 @@
                   %a{ :href => '#' } Terms of Service
                   apply.
 
-  = render partial: "common-footer"
+  = render partial: "signup/common-footer"
