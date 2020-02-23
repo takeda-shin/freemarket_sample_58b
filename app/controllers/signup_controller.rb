@@ -81,7 +81,7 @@ class SignupController < ApplicationController
     @user.build_card_info(session[:payjp])
 
     if @user.save
-      SnsCredential.create(  #ユーザ登録と同時にこっちも登録
+      SnsCredential.create(
         uid: session[:uid],
         provider: session[:provider],
         user_id: @user.id
