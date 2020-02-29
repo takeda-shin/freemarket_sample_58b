@@ -3,7 +3,7 @@
 .product-show-body
   .product-show-body__buy
     .product-show-body__buy__title 
-      = link_to details_product_path(@product) do
+      = link_to product_path(@product) do
         = @product.name
     .product-show-body__buy__top
       = render 'products/layouts/photo'
