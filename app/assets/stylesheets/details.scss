@@ -9,7 +9,11 @@
     height: 70px;
     line-height: 70px;
     background-color: red;
-    color: white;
+    color: $white;
+    &__link{
+      text-decoration: none;
+      color: white;
+    }
   }
   &__which{
     height: 70px;
@@ -20,12 +24,13 @@
     line-height: 70px;
   }
   .delete{
+    height: 70px;
+    line-height: 70px;
     margin-top: 24px;
     background-color: gray;
-    a{
-      display: inline;
-      color: white;
+    &__link{
       text-decoration: none;
+      color: white;
     }
   }
 }
