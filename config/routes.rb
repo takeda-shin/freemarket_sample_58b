@@ -29,12 +29,9 @@ Rails.application.routes.draw do
 
   resources :products do
     member do
-      get 'details'
       post 'products/new' => 'products#new'
     end
   end
-
-  get 'products/:id' => 'products#show'
 
   resources :users, only: [:index, :new, :show, :edit] do
     collection do
