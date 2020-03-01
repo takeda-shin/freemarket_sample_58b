@@ -1,6 +1,9 @@
 .signup-login-wrapper
 
-  = render partial: "signup-header-step2"
+  - if session[:password_confirmation].nil?
+    = render partial: "signup-header-step2"
+  - else
+    = render partial: "social-login-step2"
 
   .signup-main
     .signup-box

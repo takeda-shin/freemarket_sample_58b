@@ -72,22 +72,34 @@ class SignupController < ApplicationController
     session[:user_address_after_step4] = user_params[:card_info_attributes]
     @user = User.new
     @user.build_card_info
-    render '/signup/step4' unless session[:user_address_after_step4][:use_limit_month].present?
+    if session[:password_confirmation].nil?
+      render '/signup/step4' unless session[:user_address_after_step4][:use_limit_month].present?
+    end
   end 
 
   def create
-    @user = User.new(session[:user_params_after_step2_1])
-    @user.build_user_address(session[:user_address_after_step3])
-    @user.build_card_info(session[:payjp])
+    # sns経由での登録の場合はuser_address・payjpの登録は行わない
+    if session[:password_confirmation].nil?
+      @user = User.new(session[:user_params_after_step2_1])
+      @user.build_user_address(session[:user_address_after_step3])
+      @user.build_card_info(session[:payjp])
+    else
+      @user = User.new(session[:user_params_after_step2_1])
+    end
 
     if @user.save
-      SnsCredential.create(
-        uid: session[:uid],
-        provider: session[:provider],
-        user_id: @user.id
-      )  
-      session[:id] = @user.id
-      redirect_to finish_signup_index_path
+      if session[:password_confirmation].present?
+        SnsCredential.create(
+          uid: session[:uid],
+          provider: session[:provider],
+          user_id: @user.id
+        )  
+        session[:id] = @user.id
+        redirect_to finish_signup_index_path
+      else
+        session[:id] = @user.id
+        redirect_to finish_signup_index_path
+      end
     else
       render '/signup/index/'
     end
@@ -119,7 +131,7 @@ class SignupController < ApplicationController
     end
   end
 
-  # # SMS認証(payjpアカウント停止により上記の一時処理を使用する)
+  # # SMS認証(payjpアカウント停止により下記の処理を停止し、上記の処理を使用する)
   # def sms_post
   #   @user = User.new
   #   phone_number_original = user_params[:phone_number]
@@ -152,21 +164,25 @@ class SignupController < ApplicationController
 
   #クレジットカード登録
   def card_info_to_payjp
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    token = Payjp::Token.create({
-      card: {
-        number: session[:user_address_after_step4]["card_number"],
-        cvc: session[:user_address_after_step4]["security_code"],
-        exp_month: session[:user_address_after_step4]["use_limit_month"],
-        exp_year: session[:user_address_after_step4]["use_limit_year"]
-      }},
-      {
-        'X-Payjp-Direct-Token-Generate': 'true'
-      } 
-    )
-    customer = Payjp::Customer.create(card: token.id)
-    session[:payjp] = {customer_id: customer.id, card_id: customer.default_card}
+    # sns経由での登録の場合はSKIP
+    if session[:password_confirmation].nil?
 
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+      token = Payjp::Token.create({
+        card: {
+          number: session[:user_address_after_step4]["card_number"],
+          cvc: session[:user_address_after_step4]["security_code"],
+          exp_month: session[:user_address_after_step4]["use_limit_month"],
+          exp_year: session[:user_address_after_step4]["use_limit_year"]
+        }},
+        {
+          'X-Payjp-Direct-Token-Generate': 'true'
+        } 
+      )
+      customer = Payjp::Customer.create(card: token.id)
+      session[:payjp] = {customer_id: customer.id, card_id: customer.default_card}
+      
+    end
   end
 
   private

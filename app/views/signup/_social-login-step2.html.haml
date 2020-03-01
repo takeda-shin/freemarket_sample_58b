@@ -1,0 +1,22 @@
+.signup-header
+  .signup-header__logo
+    = link_to root_path do
+      = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4236546443"
+  %nav.progress
+    %ol.progress__all
+      %li.progress__all__step
+        会員情報
+        .progress__all__step__status.progress__all__step__status--red
+        .progress__all__step__bar
+          .progress__all__step__bar--after.progress__all__step__bar--after--red
+      %li.progress__all__step.progress__all__step--red
+        電話番号認証
+        .progress__all__step__status.progress__all__step__status--red
+        .progress__all__step__bar
+          .progress__all__step__bar--before.progress__all__step__bar--before--red
+          .progress__all__step__bar--after
+      %li.progress__all__step 
+        完了
+        .progress__all__step__status
+        .progress__all__step__bar
+          .progress__all__step__bar--before
