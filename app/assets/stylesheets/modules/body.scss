@@ -1,13 +1,6 @@
 .body{
-  &__screen{
-  width: 100%;
-  text-align: center;
-  line-height: 260px;
-  font-size: 60px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 50px;
-}
+  width:100%;
+  overflow:hidden;
   &__contents{
     &__title{
       text-align: center;

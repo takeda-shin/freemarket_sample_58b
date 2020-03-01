@@ -2,7 +2,14 @@
   = render 'shared/header'
   
 .body
-  = image_tag src= "https://i.gyazo.com/01ac19704a50a8f1fb2d5fa8351bc1b2.jpg",class: "body__screen"
+  %ul.slider
+    %li
+      = image_tag src= "https://i.gyazo.com/01ac19704a50a8f1fb2d5fa8351bc1b2.jpg",class: "body__screen"
+    %li
+      = image_tag src= "https://gyazo.com/313bda3f4124502698eacbf42bd7d7c3.jpg",class: "body__screen"
+    %li
+      = image_tag src= "https://gyazo.com/4eab1a7078751090764f4abb1fdf6fc2.jpg",class: "body__screen"
+    
   = render 'products/layouts/category'
   = render 'products/layouts/brand'
 
