@@ -1,0 +1,26 @@
+- if @product.status == 1
+  .product-show-body__buy__error-btn
+    売り切れました
+- else
+  .product-show-body__buy__btn
+    - if user_signed_in?
+      = link_to card_info_path(params[:id]), method: :get, class: "product-show-body__buy__btn__link" do
+        購入画面に進む
+    - else
+      = link_to new_user_session_path, method: :get, class: "product-show-body__buy__btn__link" do
+        購入画面に進む
+.product-show-body__buy__description
+  = @product.text
+.product-show-body__buy__comment
+  .product-show-body__buy__comment__left
+    .product-show-body__buy__comment__left__text
+      = fa_icon "heart-o"
+      %p.click いいね！
+      %p.number 2
+    .product-show-body__buy__comment__left__text
+      = fa_icon 'flag'
+      %p.click 不適切な商品の報告
+  .product-show-body__buy__comment__right
+    .product-show-body__buy__comment__right__text
+      = fa_icon 'lock'
+      安心安全への取り組み

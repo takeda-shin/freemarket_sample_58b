@@ -1,0 +1,11 @@
+.details-content  
+  .details-box
+    = link_to edit_product_path(@product.id), method: :get, class: "details-box__link" do
+      .details-box__link__text 商品の編集
+  .details-box__which  
+    %p or
+  .details-box
+    %h1 出品を再開する
+  .delete
+    = link_to product_path(@product.id), method: :delete, class: "delete__link", data: { confirm: "削除しますか？" } do
+      .delete-box__link__text この商品を削除する
