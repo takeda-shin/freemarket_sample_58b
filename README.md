@@ -39,6 +39,14 @@ pass: buyer_user<br>
 メールアドレス: seller_user@gmail.com<br>
 パスワード: seller_user<br
 
+## 開発担当箇所
+### ユーザー新規登録画面/ログイン(フロントエンド・バックエンド)
+![signup](https://user-images.githubusercontent.com/55591073/80953289-2fd3a880-8e36-11ea-9969-09b4e266754a.png)
+http://18.177.64.29/signup/step1<br>
+![login](https://user-images.githubusercontent.com/55591073/80953492-9ce73e00-8e36-11ea-87c3-ea598d8e952e.png)
+http://18.177.64.29/users/sign_in<br>
+
+
 
 # DB設計
 ## usersテーブル
