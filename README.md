@@ -1,4 +1,46 @@
-# メルカリ クローン DB設計
+# フリマアプリ（メルカリ）クローンサイト
+![freemarket](https://user-images.githubusercontent.com/55591073/80952807-37df1880-8e35-11ea-8832-5f7058d299de.png)
+
+## 概要
+
+TECH CAMP(旧 TECH::EXPERT)の最終課題において作成したアプリケーションです。<br>
+チーム開発(4名)で開発したアプリケーションであるため、<br>
+主に自身で実装した箇所および開発を通じて得られた知見について記載いたします。<br>
+<br>
+開発環境<br>
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code<br>
+<br>
+開発期間と平均作業時間<br>
+開発期間：約3ヶ月間<br>
+1日あたりの平均作業時間：約3時間<br>
+<br>
+開発体制<br>
+人数：4名<br>
+アジャイル型開発(スクラム)<br>
+Trelloによるタスク管理<br>
+
+## 接続先情報
+
+http://18.177.64.29/<br>
+ID: admin<br>
+Pass: 1123<br>
+<br>
+テストアカウント<br>
+購入者用<br>
+mail: buyer_user@gmail.com <br>
+pass: buyer_user<br>
+<br>
+購入用カード情報（ユーザー登録から試される場合）<br>
+番号：4242424242424242（payjpテストカード）<br>
+期限：翌月以降で入力ください<br>
+セキュリティコード：1234<br>
+<br>
+出品者用<br>
+メールアドレス: seller_user@gmail.com<br>
+パスワード: seller_user<br
+
+
+# DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
