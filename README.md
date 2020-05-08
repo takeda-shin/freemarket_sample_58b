@@ -1,4 +1,4 @@
-# フリマアプリ（メルカリ）クローンサイト
+# フリマアプリ クローンサイト
 ![freemarket](https://user-images.githubusercontent.com/55591073/80952807-37df1880-8e35-11ea-8832-5f7058d299de.png)
 
 ## 概要
